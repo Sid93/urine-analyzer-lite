@@ -1,0 +1,42 @@
+Ref,Name,Description,Category,Type,Qty,Unit Cost (USD),Total Cost (USD),Supplier,URL
+U1,ESP32-S3-DevKitC-1,Dual-core MCU with native USB; 8MB flash + 8MB OPI PSRAM,Electrical,MCU,1,15.00,15.00,Digikey,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1-N8R8/16162639
+U2,TP4056 USB-C Module,LiPo charging module with USB-C input and protection circuit,Electrical,Power,1,2.50,2.50,Amazon,https://www.amazon.com/s?k=TP4056+USB-C
+U3,S13V25F5 Buck-Boost Regulator,5 V 2.5 A step-up/step-down regulator from LiPo,Electrical,Power,1,12.00,12.00,Pololu,https://www.pololu.com/product/2775
+BT1,3.7V 2000mAh LiPo,Main rechargeable power source,Electrical,Power,1,14.00,14.00,Adafruit,https://www.adafruit.com/product/2011
+U4,TCS34725 RGB Sensor #1,I2C RGB+clear color sensor with IR cut filter (primary pad sensor),Electrical,Sensor,1,7.95,7.95,Adafruit,https://www.adafruit.com/product/1334
+U5,TCS34725 RGB Sensor #2,I2C RGB+clear color sensor (secondary / differential),Electrical,Sensor,1,7.95,7.95,Adafruit,https://www.adafruit.com/product/1334
+U6,SHT31-D Module,High-accuracy I2C temperature and humidity sensor,Electrical,Sensor,1,8.50,8.50,Adafruit,https://www.adafruit.com/product/2857
+U7,BH1750 FVI,I2C digital ambient light sensor,Electrical,Sensor,1,4.00,4.00,Amazon,https://www.amazon.com/s?k=BH1750+sensor
+U8,ADS1115 ADC Module,16-bit I2C ADC with PGA for NTC thermistor,Electrical,Module,1,6.50,6.50,Adafruit,https://www.adafruit.com/product/1085
+RT1,NTC Thermistor 10k B3950,Temperature sensing inside optical chamber,Electrical,Sensor,1,0.50,0.50,Digikey,https://www.digikey.com/en/products/result?keywords=10k+ntc+thermistor
+U9,MX1508 Dual H-Bridge,Dual DC motor driver (2A per channel),Electrical,Module,1,2.00,2.00,Amazon,https://www.amazon.com/s?k=MX1508+motor+driver
+M1,GA12-N20 6V 200RPM + Encoder,Compact DC gear motor with Hall-effect quadrature encoder,Electrical,Actuator,1,8.50,8.50,Amazon,https://www.amazon.com/s?k=N20+motor+encoder+6V
+SW1,KW12-3 Micro Limit Switch,Home position limit switch (NO),Electrical,Sensor,1,1.50,1.50,Digikey,https://www.digikey.com/en/products/result?keywords=micro+limit+switch
+SW2,KW12-3 Micro Limit Switch,End-of-travel limit switch (NO),Electrical,Sensor,1,1.50,1.50,Digikey,https://www.digikey.com/en/products/result?keywords=micro+limit+switch
+D1,YujiLEDs 95+ CRI 5mm LED,High-CRI white illumination LED for pad reading,Electrical,Actuator,1,2.50,2.50,Yuji,https://www.yujiintl.com/high-cri-led-bulbs/
+Q1,2N7000 N-Channel MOSFET,PWM control MOSFET for illumination LED,Electrical,Module,1,0.50,0.50,Digikey,https://www.digikey.com/en/products/result?keywords=2N7000
+D2,275nm UVC LED Module,UV-C sterilization LED for tray decontamination,Electrical,Actuator,1,12.00,12.00,Digikey,https://www.digikey.com/en/products/result?keywords=UVC+LED+275nm
+U10,HX711 Load Cell Amplifier Kit 1kg,24-bit ADC for load cell weight measurement,Electrical,Module,1,8.00,8.00,Amazon,https://www.amazon.com/s?k=HX711+load+cell+kit
+PR1,CSN-A2 Micro Thermal Printer,58mm thermal receipt printer for diagnostic reports,Electrical,Actuator,1,35.00,35.00,Adafruit,https://www.adafruit.com/product/597
+LCD1,Waveshare 4.3in DSI LCD,Capacitive touch display; MIPI DSI interface,Electrical,Display,1,45.00,45.00,Waveshare,https://www.waveshare.com/4.3inch-dsi-lcd.htm
+SW3,Momentary Tactile Button 6x6mm,Scan trigger button,Electrical,Sensor,1,0.10,0.10,Digikey,https://www.digikey.com/en/products/result?keywords=momentary+tactile+button
+--,GT2 Timing Belt 200mm 6mm wide,Belt drive for strip-tray linear motion,Mechanical,Mechanism,1,5.00,5.00,Amazon,https://www.amazon.com/s?k=GT2+timing+belt+200mm
+--,GT2 Pulley 16T 3mm bore,Aluminum motor and idler pulleys,Mechanical,Mechanism,2,3.00,6.00,Amazon,https://www.amazon.com/s?k=GT2+pulley+3mm+bore
+--,M3 Stainless Socket Head Screws M3×10,General chassis fasteners,Mechanical,Hardware,20,0.05,1.00,Amazon,https://www.amazon.com/s?k=M3+screw+assortment
+--,M3 Brass Heat-Set Inserts M3×5,Threaded inserts for 3D-printed parts,Mechanical,Hardware,12,0.15,1.80,Amazon,https://www.amazon.com/s?k=M3+heat+set+inserts
+--,Frosted Acrylic Sheet 50×20×2mm,LED diffuser plate in optical chamber,Mechanical,Structural,1,2.50,2.50,Amazon,https://www.amazon.com/s?k=frosted+acrylic+sheet
+--,2mm Clear Acrylic Sheet (laser cut),Strip flattening guard over tray,Mechanical,Structural,1,3.00,3.00,Amazon,https://www.amazon.com/s?k=clear+acrylic+sheet+2mm
+--,Aluminum Sheet 80×40×2mm,UV-C safety shield (internal),Mechanical,Structural,1,4.00,4.00,Home Depot,https://www.homedepot.com/s/aluminum+sheet
+--,Labsphere Spectralon 99% 10×10mm,White calibration standard for sensor normalisation,Mechanical,Calibration,1,25.00,25.00,Labsphere,https://www.labsphere.com/product/spectralon-diffuse-reflectance-standards/
+--,Whatman Grade 1 Filter Paper Strips,Disposable tray liners (pack of 100),Mechanical,Consumable,100,0.15,15.00,Amazon,https://www.amazon.com/s?k=filter+paper+strips
+--,Chassis Base (3D print – PLA),Compact main chassis 160×120×55mm,Mechanical,3D Printed,1,3.50,3.50,Self,N/A
+--,Optical Chamber (3D print – Black PLA),Light-tight sensor housing 65×30×45mm,Mechanical,3D Printed,1,2.00,2.00,Self,N/A
+--,Dipstick Tray (3D print – PLA),Single 6mm strip channel with filter-paper slot,Mechanical,3D Printed,1,2.00,2.00,Self,N/A
+--,MCU Tray (3D print – PLA),Snap-fit bracket for ESP32-S3-DevKitC-1,Mechanical,3D Printed,1,0.50,0.50,Self,N/A
+--,Printer Bracket (3D print – PETG),Mount for CSN-A2 thermal printer,Mechanical,3D Printed,1,2.50,2.50,Self,N/A
+--,Display Bezel (3D print – PLA),Front panel with 4.3in LCD cutout,Mechanical,3D Printed,1,1.50,1.50,Self,N/A
+--,UV-C Shield (3D print – Black PLA),Internal shroud for UV-C LED,Mechanical,3D Printed,1,1.00,1.00,Self,N/A
+--,Belt Tensioner (3D print – PLA),Adjustable GT2 idler arm,Mechanical,3D Printed,1,1.00,1.00,Self,N/A
+--,Limit Switch Bracket ×2 (3D print – PLA),Adjustable KW12-3 mount,Mechanical,3D Printed,2,0.30,0.60,Self,N/A
+--,N20 Motor Bracket (3D print – PLA),Adapter to mount N20 motor to chassis,Mechanical,3D Printed,1,0.50,0.50,Self,N/A
+,,,,,,TOTAL,,387.40,,
