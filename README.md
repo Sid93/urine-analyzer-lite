@@ -15,7 +15,7 @@ The Urine Analyzer Lite reads standard 10-pad reagent dipsticks using dual TCS34
 |---|---|
 | MCU | ESP32-S3-DevKitC-1 (Xtensa dual-core 240 MHz, 8 MB flash) |
 | Sensors | TCS34725 ×2, SHT31, BH1750, ADS1115, HX711 |
-| Display | Waveshare 4.3" MIPI DSI capacitive touch LCD |
+| Display | 3.5" SPI TFT (ILI9488) + XPT2046 touch — see `hardware/ENGINEERING_REVIEW.md` |
 | Motor | GA12-N20 6V 200RPM with Hall encoder + MX1508 H-bridge |
 | Printer | CSN-A2 58mm thermal (ESC/POS) |
 | Power | 3.7V 2000mAh LiPo → TP4056 USB-C charger → S13V25F5 5V regulator |

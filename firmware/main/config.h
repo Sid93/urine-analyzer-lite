@@ -1,52 +1,69 @@
 #pragma once
 #include <Arduino.h>
 
-// ── I2C ──────────────────────────────────────────────────────────────────────
-#define PIN_SDA   21
-#define PIN_SCL   22
+// Pin map = hardware/ENGINEERING_REVIEW.md §3 (master, ESP32-S3, USB-CDC enabled).
+// Avoids strapping pins (0/3/45/46), USB pins (19/20), and non-existent S3 pins (22–25).
+// PENDING ELECTRONICS-ENGINEER VERIFICATION before PCB layout.
+
+// ── I2C (shared bus: TCA9548A mux, SHT31, BH1750, ADS1115) ───────────────────
+#define PIN_SDA    1
+#define PIN_SCL    2
 
 // ── Motor & encoder (N20 + MX1508) ───────────────────────────────────────────
-#define PIN_MOTOR_IN1  18
-#define PIN_MOTOR_IN2   8
-#define PIN_ENC_A      15
+#define PIN_MOTOR_IN1   4   // PWM
+#define PIN_MOTOR_IN2   5   // PWM
+#define PIN_ENC_A       6
 #define PIN_ENC_B       7
 
 // ── Limit switches (INPUT_PULLUP, active LOW) ────────────────────────────────
 #define PIN_LIMIT_HOME 10
 #define PIN_LIMIT_END  11
 
-// ── LED illumination (PWM) ────────────────────────────────────────────────────
-#define PIN_LED_PWM     2
+// ── LED illumination (PWM via 2N7000) ─────────────────────────────────────────
+#define PIN_LED_PWM    12
 #define LED_PWM_CHAN    0
 #define LED_PWM_FREQ    5000
 #define LED_PWM_RES     8    // 8-bit: 0–255
 
-// ── UV-C enable (active HIGH) ─────────────────────────────────────────────────
-#define PIN_UVC_EN      3
+// ── UV-C enable (active HIGH; external 10k pull-DOWN → OFF at boot, safety) ───
+#define PIN_UVC_EN     13
 #define UVC_STERILIZE_MS  10000   // 10 s exposure
 
 // ── HX711 load cell ──────────────────────────────────────────────────────────
-#define PIN_HX711_DT    4
-#define PIN_HX711_SCK   5
+#define PIN_HX711_DT   14
+#define PIN_HX711_SCK  15
 
-// ── UART: thermal printer (CSN-A2) ──────────────────────────────────────────
-#define PIN_PRINTER_TX  6
-#define PIN_PRINTER_RX 19
+// ── UART1: thermal printer (CSN-A2) ──────────────────────────────────────────
+#define PIN_PRINTER_TX 17   // MCU TX → printer RXD
+#define PIN_PRINTER_RX 18   // printer TXD → MCU RX
 #define PRINTER_BAUD    9600
 
 // ── UART: debug / log ────────────────────────────────────────────────────────
 #define SERIAL_BAUD     115200
 
 // ── UI button ────────────────────────────────────────────────────────────────
-#define PIN_SCAN_BTN    9    // INPUT_PULLUP, active LOW
+#define PIN_SCAN_BTN   16    // INPUT_PULLUP, active LOW
+
+// ── Display: SPI TFT 3.5–4.0" (ILI9488/ST7796) + XPT2046 touch (polled) ──────
+// Touch shares the SPI bus (SCLK/MOSI/MISO); touch IRQ polled to save a pin.
+#define PIN_TFT_SCLK   38
+#define PIN_TFT_MOSI   39
+#define PIN_TFT_MISO   40   // shared with touch read
+#define PIN_TFT_CS     41
+#define PIN_TFT_DC     42
+#define PIN_TFT_BL     47   // backlight enable / PWM
+#define PIN_TOUCH_CS   48
+#define PIN_TFT_RST    21
 
 // ── ADS1115 ──────────────────────────────────────────────────────────────────
 #define ADS_ADDR        0x48
 #define ADS_GAIN        1    // ±4.096 V
 
-// ── TCS34725 I2C addresses ────────────────────────────────────────────────────
-// Both default to 0x29; use TCA9548A mux or address pin if needed.
-// Firmware multiplexes by enabling the LED on only one sensor at a time.
+// ── I2C mux + TCS34725 ────────────────────────────────────────────────────────
+// Two TCS34725 share fixed address 0x29 → each sits behind its own TCA9548A channel.
+#define TCA9548A_ADDR   0x70
+#define TCS_MUX_CH0     0    // primary RGB sensor
+#define TCS_MUX_CH1     1    // secondary / differential RGB sensor
 #define TCS_ADDR        0x29
 
 // ── SHT31 ────────────────────────────────────────────────────────────────────
