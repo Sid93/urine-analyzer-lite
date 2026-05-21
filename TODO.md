@@ -16,9 +16,10 @@
 - 🔲 **Add TCA9548A I2C mux + 3.3V regulator to BOM (two TCS34725 clash at 0x29; no 3V3 rail)**
 - 🔲 **Decide display: ESP32-S3 cannot drive MIPI-DSI — pick SPI TFT / RGB / OLED / new host**
 - ✅ Netlist generated from master pin map → `hardware/netlist/` (.net + NETLIST.md)
-- ✅ Schematic regenerated + ERC-clean (0 errors), netlist 39/39 → `hardware/schematic/` (+ PDF)
-- 🔲 Engineer: swap generic symbols for library parts + assign real footprints, re-run ERC
-- 🔲 Engineer: import to Pcbnew → PCB layout → DRC → Gerbers
+- ✅ Schematic: real library symbols (jellybeans) + real footprints, ERC 0 errors, netlist 39/39
+- ✅ Starting PCB generated → `hardware/pcb/` (31 fp placed + nets, schematic-parity 0, unrouted)
+- 🔲 Engineer: confirm module header pin ORDER vs datasheets (footprints.py)
+- 🔲 Engineer: place + route, power planes, mounting holes, DRC→0, export Gerbers
 - 🔲 Open schematic in KiCad EDA and visually verify all nets
 - 🔲 Assign real KiCad symbol library parts to each component
 - 🔲 Add ERC (Electrical Rules Check) violations resolution

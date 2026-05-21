@@ -10,19 +10,26 @@ from the same netlist model as `../netlist/` (single source of truth = `config.h
 - `ERC_report.txt` — KiCad ERC output.
 
 ## Validation (done with KiCad 10.0.3 `kicad-cli`)
-- **Netlist cross-check:** KiCad's exported netlist matches the intended model **39/39 nets, 0 mismatches**.
-- **ERC:** **0 errors**, 59 warnings — all benign and expected:
-  - `lib_symbol_issues (ual)` — symbols are *embedded* in the file (generic rectangles, one per
-    component); the source library just isn't registered. Render fine.
-  - `footprint_link_issues` — footprints are **placeholders**; the engineer assigns real ones.
-  - `isolated_pin_label: VBUS` — expected single-node net (USB 5V input on the TP4056 module).
+- **Netlist cross-check:** KiCad's exported netlist matches the model **39/39 nets** by ref **and pad**.
+- **ERC:** **0 errors**, ~18 warnings — all benign: `lib_symbol_issues (ual)` for the custom
+  module symbols (embedded, render fine) and `isolated_pin_label: VBUS` (expected single-node
+  USB input). Jellybean symbols + all footprints now resolve cleanly.
+
+## Symbols & footprints
+- **14 jellybean discretes** (R×5, C, C_Polarized×2, LED, Battery_Cell, Thermistor, SW_Push×3)
+  use **real KiCad library symbols** (`Device:*`, `Switch:*`), embedded from KiCad's shared libs.
+- **Modules + the MOSFET** use generic rectangular symbols (no stock symbol exists for dev-boards/
+  breakouts). Their pins are numbered by **PCB pad** so schematic↔board align.
+- **Every symbol has a real footprint** assigned (see `../footprints.py`), so "Update PCB from
+  Schematic" carries footprints. Module footprints are 2.54mm pin headers — verify pin ORDER
+  against each module's datasheet.
 
 ## How connectivity is represented
-Each component is a generic rectangular symbol with named/numbered pins. Every pin carries a
-**global label = its net name**, placed exactly on the pin's connection point. KiCad joins global
-labels by name across the sheet, so the netlist is exact. There are intentionally **no drawn
-wires** — this is a connection-by-label schematic, valid and ERC-clean, but visually it's a
-net-label list rather than a hand-drawn ratsnest.
+Every pin carries a **global label = its net name**, placed exactly on the pin's connection point.
+KiCad joins global labels by name across the sheet, so the netlist is exact. There are
+intentionally **no drawn wires** — a connection-by-label schematic, valid and ERC-clean, but
+visually a net-label list rather than a hand-drawn ratsnest (the engineer can redraw with wires;
+connectivity won't change).
 
 ## What the engineer does next
 1. Open in KiCad 9/10. Review nets against `../ENGINEERING_REVIEW.md` and `config.h`.

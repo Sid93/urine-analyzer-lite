@@ -5,80 +5,80 @@
 
 ## Components
 
-| Ref | Value | Footprint (placeholder) | Description |
+| Ref | Value | Footprint | Description |
 |---|---|---|---|
-| U1 | ESP32-S3-DevKitC-1 | `Module:ESP32-S3-DevKitC-1_header_2x22` | Main MCU (USB-CDC enabled) |
-| BT1 | LiPo 3.7V 2000mAh | `Connector:JST_PH_2pin` | Main battery |
-| U2 | TP4056 USB-C | `Module:TP4056_USBC` | LiPo charger (charge path only) |
-| U3 | S13V25F5 buck-boost | `Module:Pololu_S13V25Fx` | 5V 2.5A regulator |
-| U12 | AMS1117-3.3 | `Package_TO_SOT_223:SOT-223-3_TabPin2` | 3.3V LDO for sensor bus |
-| C1 | 1000uF/10V | `CP_Radial_D10.0mm_P5.00mm` | Bulk cap at 5V (printer pulse) |
-| C2 | 470uF/10V | `CP_Radial_D8.0mm_P3.50mm` | Bulk cap at motor driver |
-| C3 | 10uF/10V | `Capacitor_SMD:C_0805` | AMS1117 output cap |
-| U11 | TCA9548A | `Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm` | I2C mux (addr 0x70) |
-| U4 | TCS34725 | `Module:Adafruit_TCS34725` | RGB sensor #1 (mux ch0) |
-| U5 | TCS34725 | `Module:Adafruit_TCS34725` | RGB sensor #2 (mux ch1) |
-| U6 | SHT31-D | `Module:SHT31_breakout` | Temp/humidity (0x44) |
-| U7 | BH1750 | `Module:BH1750_breakout` | Ambient light (0x23) |
-| U8 | ADS1115 | `Module:ADS1115_breakout` | 16-bit ADC (0x48) |
-| RT1 | NTC 10k B3950 | `Resistor_THT:R_Axial_DIN0207` | Optical chamber temp |
-| R1 | 10k | `Resistor_SMD:R_0805` | NTC divider lower leg |
-| U9 | MX1508 | `Module:MX1508_driver` | Dual H-bridge (one channel used) |
-| M1 | GA12-N20 6V 200RPM +enc | `Motor:GA12-N20_encoder` | Strip transport motor |
-| SW1 | KW12-3 | `Button_Switch_THT:SW_Limit` | Home limit (active-LOW) |
-| SW2 | KW12-3 | `Button_Switch_THT:SW_Limit` | End limit (active-LOW) |
-| D1 | High-CRI 95+ LED | `LED_THT:LED_D5.0mm` | Pad illumination |
-| R2 | 100R | `Resistor_SMD:R_0805` | LED current limit |
-| Q1 | 2N7000 | `Package_TO_SOT_THT:TO-92` | LED PWM low-side switch |
-| R3 | 220R | `Resistor_SMD:R_0805` | MOSFET gate series |
-| R4 | 100k | `Resistor_SMD:R_0805` | MOSFET gate pulldown |
-| D2 | 275nm UVC module | `Module:UVC_LED_module` | Tray sterilization |
-| R5 | 100k | `Resistor_SMD:R_0805` | UV-C EN pulldown (OFF at boot) |
-| U10 | HX711 1kg kit | `Module:HX711_breakout` | Sample weight |
-| PR1 | CSN-A2 thermal | `Connector:Printer_TTL_3pin` | Report printout |
-| LCD1 | 3.5in SPI TFT ILI9488 +touch | `Connector:TFT_SPI_14pin` | UI display |
-| SW3 | Tactile 6x6 | `Button_Switch_THT:SW_PUSH_6mm` | Scan trigger (active-LOW) |
+| U1 | ESP32-S3-DevKitC-1 | `Connector_PinHeader_2.54mm:PinHeader_2x22_P2.54mm_Vertical` | Main MCU (USB-CDC enabled) |
+| BT1 | LiPo 3.7V 2000mAh | `Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal` | Main battery |
+| U2 | TP4056 USB-C | `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical` | LiPo charger (charge path only) |
+| U3 | S13V25F5 buck-boost | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | 5V 2.5A regulator |
+| U12 | AMS1117-3.3 | `Package_TO_SOT_SMD:SOT-223-3_TabPin2` | 3.3V LDO for sensor bus |
+| C1 | 1000uF/10V | `Capacitor_THT:CP_Radial_D10.0mm_P5.00mm` | Bulk cap at 5V (printer pulse) |
+| C2 | 470uF/10V | `Capacitor_THT:CP_Radial_D8.0mm_P3.50mm` | Bulk cap at motor driver |
+| C3 | 10uF/10V | `Capacitor_SMD:C_0805_2012Metric` | AMS1117 output cap |
+| U11 | TCA9548A | `Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical` | I2C mux (addr 0x70) |
+| U4 | TCS34725 | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | RGB sensor #1 (mux ch0) |
+| U5 | TCS34725 | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | RGB sensor #2 (mux ch1) |
+| U6 | SHT31-D | `Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical` | Temp/humidity (0x44) |
+| U7 | BH1750 | `Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical` | Ambient light (0x23) |
+| U8 | ADS1115 | `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical` | 16-bit ADC (0x48) |
+| RT1 | NTC 10k B3950 | `Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal` | Optical chamber temp |
+| R1 | 10k | `Resistor_SMD:R_0805_2012Metric` | NTC divider lower leg |
+| U9 | MX1508 | `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical` | Dual H-bridge (one channel used) |
+| M1 | GA12-N20 6V 200RPM +enc | `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical` | Strip transport motor |
+| SW1 | KW12-3 | `Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical` | Home limit (active-LOW) |
+| SW2 | KW12-3 | `Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical` | End limit (active-LOW) |
+| D1 | High-CRI 95+ LED | `LED_THT:LED_D5.0mm_Clear` | Pad illumination |
+| R2 | 100R | `Resistor_SMD:R_0805_2012Metric` | LED current limit |
+| Q1 | 2N7000 | `Package_TO_SOT_THT:TO-92_Inline` | LED PWM low-side switch |
+| R3 | 220R | `Resistor_SMD:R_0805_2012Metric` | MOSFET gate series |
+| R4 | 100k | `Resistor_SMD:R_0805_2012Metric` | MOSFET gate pulldown |
+| D2 | 275nm UVC module | `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical` | Tray sterilization |
+| R5 | 100k | `Resistor_SMD:R_0805_2012Metric` | UV-C EN pulldown (OFF at boot) |
+| U10 | HX711 1kg kit | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | Sample weight |
+| PR1 | CSN-A2 thermal | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | Report printout |
+| LCD1 | 3.5in SPI TFT ILI9488 +touch | `Connector_PinHeader_2.54mm:PinHeader_1x13_P2.54mm_Vertical` | UI display |
+| SW3 | Tactile 6x6 | `Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical` | Scan trigger (active-LOW) |
 
 ## Nets
 
 | Net | Connections (ref.pin = name) |
 |---|---|
-| **+3V3** | U12.2 (VOUT), C3.1 (1), U11.VCC (VCC), U11.RST (RESET), U4.VIN (VIN), U5.VIN (VIN), U6.VIN (VIN), U7.VCC (VCC), U8.VDD (VDD), RT1.1 (1), M1.VCC (VCC), U10.VCC (VCC) |
-| **+5V** | U1.5V (5V), U3.3 (VOUT), U3.4 (EN), U12.3 (VIN), C1.1 (+), C2.1 (+), U9.VCC (VCC), D1.A (A), D2.VIN (VIN), PR1.VH (VH), LCD1.VCC (VCC) |
-| **ENC_A** | U1.6 (GPIO6), M1.C1 (C1) |
-| **ENC_B** | U1.7 (GPIO7), M1.C2 (C2) |
-| **GND** | U1.GND1 (GND), U1.GND2 (GND), BT1.2 (-), U2.2 (GND), U2.4 (BAT-), U2.6 (OUT-), U3.2 (GND), U12.1 (GND), C1.2 (-), C2.2 (-), C3.2 (2), U11.GND (GND), U11.A0 (A0), U11.A1 (A1), U11.A2 (A2), U4.GND (GND), U5.GND (GND), U6.GND (GND), U6.ADR (ADR), U7.GND (GND), U7.ADDR (ADDR), U8.GND (GND), U8.ADDR (ADDR), R1.2 (2), U9.GND (GND), M1.GND (GND), SW1.1 (COM), SW2.1 (COM), Q1.S (S), R4.2 (2), D2.GND (GND), R5.2 (2), U10.GND (GND), PR1.GND (GND), LCD1.GND (GND), SW3.2 (2) |
-| **HX_DT** | U1.14 (GPIO14), U10.DT (DT) |
-| **HX_SCK** | U1.15 (GPIO15), U10.SCK (SCK) |
-| **I2C_SCL** | U1.2 (GPIO2), U11.SCL (SCL), U6.SCL (SCL), U7.SCL (SCL), U8.SCL (SCL) |
-| **I2C_SDA** | U1.1 (GPIO1), U11.SDA (SDA), U6.SDA (SDA), U7.SDA (SDA), U8.SDA (SDA) |
-| **LED_DRAIN** | R2.2 (2), Q1.D (D) |
-| **LED_GATE** | Q1.G (G), R3.2 (2), R4.1 (1) |
-| **LED_NODE** | D1.K (K), R2.1 (1) |
+| **+3V3** | U12.2 (VOUT), C3.1 (1), U11.1 (VCC), U11.5 (RESET), U4.1 (VIN), U5.1 (VIN), U6.1 (VIN), U7.1 (VCC), U8.1 (VDD), RT1.1 (1), M1.3 (VCC), U10.1 (VCC) |
+| **+5V** | U1.1 (5V), U3.3 (VOUT), U3.4 (EN), U12.3 (VIN), C1.1 (+), C2.1 (+), U9.1 (VCC), D1.2 (A), D2.1 (VIN), PR1.1 (VH), LCD1.1 (VCC) |
+| **ENC_A** | U1.8 (GPIO6), M1.5 (C1) |
+| **ENC_B** | U1.9 (GPIO7), M1.6 (C2) |
+| **GND** | U1.2 (GND), U1.3 (GND), BT1.2 (-), U2.2 (GND), U2.4 (BAT-), U2.6 (OUT-), U3.2 (GND), U12.1 (GND), C1.2 (-), C2.2 (-), C3.2 (2), U11.2 (GND), U11.6 (A0), U11.7 (A1), U11.8 (A2), U4.2 (GND), U5.2 (GND), U6.2 (GND), U6.5 (ADR), U7.2 (GND), U7.5 (ADDR), U8.2 (GND), U8.5 (ADDR), R1.2 (2), U9.2 (GND), M1.4 (GND), SW1.1 (COM), SW2.1 (COM), Q1.1 (S), R4.2 (2), D2.2 (GND), R5.2 (2), U10.2 (GND), PR1.2 (GND), LCD1.2 (GND), SW3.2 (2) |
+| **HX_DT** | U1.14 (GPIO14), U10.3 (DT) |
+| **HX_SCK** | U1.15 (GPIO15), U10.4 (SCK) |
+| **I2C_SCL** | U1.5 (GPIO2), U11.4 (SCL), U6.4 (SCL), U7.4 (SCL), U8.4 (SCL) |
+| **I2C_SDA** | U1.4 (GPIO1), U11.3 (SDA), U6.3 (SDA), U7.3 (SDA), U8.3 (SDA) |
+| **LED_DRAIN** | R2.2 (2), Q1.3 (D) |
+| **LED_GATE** | Q1.2 (G), R3.2 (2), R4.1 (1) |
+| **LED_NODE** | D1.1 (K), R2.1 (1) |
 | **LED_PWM** | U1.12 (GPIO12), R3.1 (1) |
 | **LIM_END** | U1.11 (GPIO11), SW2.2 (NO) |
 | **LIM_HOME** | U1.10 (GPIO10), SW1.2 (NO) |
-| **MOTOR_A** | U9.OUT1 (OUT1), M1.M1 (M1) |
-| **MOTOR_B** | U9.OUT2 (OUT2), M1.M2 (M2) |
-| **MOT_IN1** | U1.4 (GPIO4), U9.IN1 (IN1) |
-| **MOT_IN2** | U1.5 (GPIO5), U9.IN2 (IN2) |
-| **NTC_SENSE** | U8.A0 (A0), RT1.2 (2), R1.1 (1) |
-| **PRN_RX** | U1.18 (GPIO18), PR1.TX (TX) |
-| **PRN_TX** | U1.17 (GPIO17), PR1.RX (RX) |
+| **MOTOR_A** | U9.5 (OUT1), M1.1 (M1) |
+| **MOTOR_B** | U9.6 (OUT2), M1.2 (M2) |
+| **MOT_IN1** | U1.6 (GPIO4), U9.3 (IN1) |
+| **MOT_IN2** | U1.7 (GPIO5), U9.4 (IN2) |
+| **NTC_SENSE** | U8.6 (A0), RT1.2 (2), R1.1 (1) |
+| **PRN_RX** | U1.18 (GPIO18), PR1.4 (TX) |
+| **PRN_TX** | U1.17 (GPIO17), PR1.3 (RX) |
 | **SCAN_BTN** | U1.16 (GPIO16), SW3.1 (1) |
-| **TCS1_SCL** | U11.SC0 (SC0), U4.SCL (SCL) |
-| **TCS1_SDA** | U11.SD0 (SD0), U4.SDA (SDA) |
-| **TCS2_SCL** | U11.SC1 (SC1), U5.SCL (SCL) |
-| **TCS2_SDA** | U11.SD1 (SD1), U5.SDA (SDA) |
-| **TFT_BL** | U1.47 (GPIO47), LCD1.LED (LED) |
-| **TFT_CS** | U1.41 (GPIO41), LCD1.CS (CS) |
-| **TFT_DC** | U1.42 (GPIO42), LCD1.DC (DC) |
-| **TFT_MISO** | U1.40 (GPIO40), LCD1.SDO (SDO), LCD1.T_DO (T_DO) |
-| **TFT_MOSI** | U1.39 (GPIO39), LCD1.SDI (SDI), LCD1.T_DIN (T_DIN) |
-| **TFT_RST** | U1.21 (GPIO21), LCD1.RESET (RESET) |
-| **TFT_SCLK** | U1.38 (GPIO38), LCD1.SCK (SCK), LCD1.T_CLK (T_CLK) |
-| **TOUCH_CS** | U1.48 (GPIO48), LCD1.T_CS (T_CS) |
-| **UVC_EN** | U1.13 (GPIO13), D2.EN (EN), R5.1 (1) |
+| **TCS1_SCL** | U11.10 (SC0), U4.4 (SCL) |
+| **TCS1_SDA** | U11.9 (SD0), U4.3 (SDA) |
+| **TCS2_SCL** | U11.12 (SC1), U5.4 (SCL) |
+| **TCS2_SDA** | U11.11 (SD1), U5.3 (SDA) |
+| **TFT_BL** | U1.25 (GPIO47), LCD1.8 (LED) |
+| **TFT_CS** | U1.23 (GPIO41), LCD1.3 (CS) |
+| **TFT_DC** | U1.24 (GPIO42), LCD1.5 (DC) |
+| **TFT_MISO** | U1.22 (GPIO40), LCD1.9 (SDO), LCD1.13 (T_DO) |
+| **TFT_MOSI** | U1.21 (GPIO39), LCD1.6 (SDI), LCD1.12 (T_DIN) |
+| **TFT_RST** | U1.19 (GPIO21), LCD1.4 (RESET) |
+| **TFT_SCLK** | U1.20 (GPIO38), LCD1.7 (SCK), LCD1.10 (T_CLK) |
+| **TOUCH_CS** | U1.26 (GPIO48), LCD1.11 (T_CS) |
+| **UVC_EN** | U1.13 (GPIO13), D2.3 (EN), R5.1 (1) |
 | **VBAT** | BT1.1 (+), U2.3 (BAT+) |
 | **VBUS** | U2.1 (VBUS) |
 | **VSYS** | U2.5 (OUT+), U3.1 (VIN) |

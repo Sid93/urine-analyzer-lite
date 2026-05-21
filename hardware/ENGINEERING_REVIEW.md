@@ -109,9 +109,13 @@ All display + I/O pins above are valid, free ESP32-S3 GPIOs and match `firmware/
 1. Engineer resolves all 🔴 items and approves §3 map.
 2. ✅ Netlist generated from the master pin map → `hardware/netlist/` (`urine_analyzer_lite.net`
    importable into Pcbnew, plus `NETLIST.md`). Footprints are placeholders to confirm in KiCad.
-3. ✅ Schematic generated + **ERC-clean (0 errors)** → `hardware/schematic/urine_analyzer_lite.kicad_sch`
-   (+ PDF, ERC_report.txt). KiCad netlist cross-check matches the model 39/39. Engineer: swap
-   generic symbols for library parts, assign real footprints, optionally redraw with wires.
+3. ✅ Schematic generated + **ERC-clean (0 errors)** → `hardware/schematic/` (+ PDF). Jellybean
+   discretes use real `Device:`/`Switch:` library symbols; all parts have **real footprints**.
+   KiCad netlist matches the model 39/39 by ref+pad.
+4. ✅ **Starting PCB generated** → `hardware/pcb/urine_analyzer_lite.kicad_pcb` (+ project, render).
+   31 footprints placed + net-assigned; **schematic-parity 0**. Unrouted (104-net ratsnest) and
+   auto-grid placement (cosmetic DRC). Engineer: confirm module header pin order, place, route,
+   power planes, DRC→0, Gerbers.
 4. PCB layout: power planes (GND/3V3/5V), wide traces for motor/printer/UV-C, mounting holes to chassis.
 5. Run **DRC** → 0 errors. Export Gerbers + assembly BOM (JLCPCB/PCBWay).
 6. Order 5× prototypes.

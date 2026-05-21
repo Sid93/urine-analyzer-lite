@@ -1,0 +1,1290 @@
+** Drc report for urine_analyzer_lite.kicad_pcb **
+** Created on 2026-05-21T16:20:34 **
+** Report includes: Errors, Warnings **
+
+** Found 214 DRC violations **
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 70.6400 mm): PTH pad 33 [<no net>] of U1
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 73.1800 mm): PTH pad 35 [<no net>] of U1
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0147 mm)
+    Local override; error
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(30.0000 mm, 30.0000 mm): Footprint U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 30.0000 mm): Footprint U1
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+    @(30.0000 mm, 30.0000 mm): Footprint U1
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(30.0000 mm, 68.1000 mm): PTH pad 31 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(30.0000 mm, 70.6400 mm): PTH pad 33 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(30.0000 mm, 73.1800 mm): PTH pad 35 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(30.0000 mm, 75.7200 mm): PTH pad 37 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+    @(30.0000 mm, 72.0000 mm): Footprint C2
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 70.6400 mm): PTH pad 33 [<no net>] of U1
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 73.1800 mm): PTH pad 35 [<no net>] of U1
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 70.6400 mm): PTH pad 33 [<no net>] of U1
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+    @(30.0000 mm, 73.1800 mm): PTH pad 35 [<no net>] of U1
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[solder_mask_bridge]: Rear solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(31.7500 mm, 72.0000 mm): Circle of C2 on F.Silkscreen
+    @(28.6200 mm, 31.2700 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.9900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(31.7500 mm, 72.0000 mm): Circle of C2 on F.Silkscreen
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.8300 mm, 68.4840 mm): Segment of C2 on F.Silkscreen
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.8700 mm, 68.5070 mm): Segment of C2 on F.Silkscreen
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.9100 mm, 68.5320 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.9500 mm, 68.5570 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.9900 mm, 68.5820 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.8300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.8700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.9100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.9500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(34.0300 mm, 68.6080 mm): Segment of C2 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(34.0300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 66.7500 mm): Reference field of C2
+    @(32.5400 mm, 65.5600 mm): PTH pad 30 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 66.7500 mm): Reference field of C2
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.9200 mm, 28.6200 mm): Segment of U1 on F.Silkscreen
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 72.0000 mm): Circle of C2 on F.Silkscreen
+    @(30.0000 mm, 68.1000 mm): PTH pad 31 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 72.0000 mm): Circle of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 72.0000 mm): Circle of C2 on F.Silkscreen
+    @(30.0000 mm, 75.7200 mm): PTH pad 37 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 72.0000 mm): Circle of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7500 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7900 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7900 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7900 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.7900 mm, 67.9200 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8300 mm, 67.9210 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8300 mm, 67.9210 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8300 mm, 67.9210 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8300 mm, 67.9210 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0700 mm, 67.9320 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0700 mm, 67.9320 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0700 mm, 67.9320 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0700 mm, 67.9320 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1100 mm, 67.9360 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1100 mm, 67.9360 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1100 mm, 67.9360 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1100 mm, 67.9360 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1500 mm, 67.9390 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1500 mm, 67.9390 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1500 mm, 67.9390 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1500 mm, 67.9390 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1900 mm, 67.9440 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1900 mm, 67.9440 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1900 mm, 67.9440 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.1900 mm, 67.9440 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2300 mm, 67.9480 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2300 mm, 67.9480 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2300 mm, 67.9480 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2300 mm, 67.9480 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3100 mm, 67.9580 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3100 mm, 67.9580 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3100 mm, 67.9580 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3100 mm, 67.9580 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3500 mm, 67.9640 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3500 mm, 67.9640 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3500 mm, 67.9640 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3500 mm, 67.9640 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3900 mm, 67.9700 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3900 mm, 67.9700 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3900 mm, 67.9700 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.3900 mm, 67.9700 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4300 mm, 67.9770 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4300 mm, 67.9770 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4300 mm, 67.9770 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4300 mm, 67.9770 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4700 mm, 67.9830 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4700 mm, 67.9830 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.4700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2700 mm, 67.9530 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2700 mm, 67.9530 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2700 mm, 67.9530 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.2700 mm, 67.9530 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5100 mm, 67.9910 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5100 mm, 67.9910 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5500 mm, 67.9980 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5500 mm, 67.9980 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5900 mm, 68.0070 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5900 mm, 68.0070 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.5900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6300 mm, 68.0150 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6300 mm, 68.0150 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6700 mm, 68.0240 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6700 mm, 68.0240 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.6700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7100 mm, 68.0330 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7100 mm, 68.0330 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7500 mm, 68.0430 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7500 mm, 68.0430 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7900 mm, 68.0530 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7900 mm, 68.0530 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.7900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8300 mm, 68.0640 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8300 mm, 68.0640 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8700 mm, 67.9220 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8700 mm, 67.9220 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8700 mm, 67.9220 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.8700 mm, 67.9220 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9100 mm, 67.9230 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9100 mm, 67.9230 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9100 mm, 67.9230 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9100 mm, 67.9230 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9500 mm, 67.9250 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9500 mm, 67.9250 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9500 mm, 67.9250 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9500 mm, 67.9250 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9900 mm, 67.9270 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9900 mm, 67.9270 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9900 mm, 67.9270 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(31.9900 mm, 67.9270 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0300 mm, 67.9300 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0300 mm, 67.9300 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0300 mm, 67.9300 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.0300 mm, 67.9300 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2300 mm, 68.1950 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2300 mm, 68.1950 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2700 mm, 68.2110 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2700 mm, 68.2110 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3100 mm, 68.2270 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3100 mm, 68.2270 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3500 mm, 68.2430 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3500 mm, 68.2430 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3900 mm, 68.2600 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3900 mm, 68.2600 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.4300 mm, 68.2780 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.4300 mm, 68.2780 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8700 mm, 68.0750 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8700 mm, 68.0750 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.8700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9100 mm, 68.0870 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9100 mm, 68.0870 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9500 mm, 68.0990 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9500 mm, 68.0990 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9900 mm, 68.1110 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9900 mm, 68.1110 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(32.9900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0300 mm, 68.1240 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0300 mm, 68.1240 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0700 mm, 68.1370 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0700 mm, 68.1370 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.0700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1100 mm, 68.1510 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1100 mm, 68.1510 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1500 mm, 68.1650 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1500 mm, 68.1650 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1900 mm, 68.1800 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 68.1000 mm): PTH pad 32 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1900 mm, 68.1800 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 70.6400 mm): PTH pad 34 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.1900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3500 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3900 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.4300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.4300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2300 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.2700 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 73.1800 mm): PTH pad 36 [<no net>] of U1
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(33.3100 mm, 73.0400 mm): Segment of C2 on F.Silkscreen
+    @(32.5400 mm, 75.7200 mm): PTH pad 38 [<no net>] of U1
+
+** Found 104 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 42.7000 mm): PTH pad 12 [LED_PWM] of U1
+    @(239.0875 mm, 156.0000 mm): Pad 1 [LED_PWM] of R3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(199.2700 mm, 156.0000 mm): PTH pad 2 [LED_GATE] of Q1
+    @(29.0875 mm, 198.0000 mm): Pad 1 [LED_GATE] of R4 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.9125 mm, 156.0000 mm): Pad 2 [LED_GATE] of R3 on F.Cu
+    @(199.2700 mm, 156.0000 mm): PTH pad 2 [LED_GATE] of Q1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 30.0000 mm): PTH pad 1 [+5V] of U1
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 198.0000 mm): PTH pad 1 [+5V] of D2
+    @(116.5400 mm, 156.0000 mm): PTH pad 2 [+5V] of D1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(116.5400 mm, 156.0000 mm): PTH pad 2 [+5V] of D1
+    @(198.0000 mm, 114.0000 mm): PTH pad 1 [+5V] of U9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(116.5400 mm, 156.0000 mm): PTH pad 2 [+5V] of D1
+    @(30.0000 mm, 72.0000 mm): PTH pad 1 [+5V] of C2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.0000 mm, 37.6200 mm): PTH pad 4 [+5V] of U3
+    @(156.0000 mm, 35.0800 mm): PTH pad 3 [+5V] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(194.8500 mm, 32.3000 mm): Pad 3 [+5V] of U12 on F.Cu
+    @(156.0000 mm, 35.0800 mm): PTH pad 3 [+5V] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(194.8500 mm, 32.3000 mm): Pad 3 [+5V] of U12 on F.Cu
+    @(198.0000 mm, 114.0000 mm): PTH pad 1 [+5V] of U9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 198.0000 mm): PTH pad 1 [+5V] of PR1
+    @(240.0000 mm, 198.0000 mm): PTH pad 1 [+5V] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 198.0000 mm): PTH pad 1 [+5V] of PR1
+    @(198.0000 mm, 114.0000 mm): PTH pad 1 [+5V] of U9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 30.0000 mm): PTH pad 1 [+5V] of C1
+    @(194.8500 mm, 32.3000 mm): Pad 3 [+5V] of U12 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 32.5400 mm): PTH pad 3 [GND] of U1
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 116.5400 mm): PTH pad 2 [GND] of U7
+    @(30.0000 mm, 124.1600 mm): PTH pad 5 [GND] of U7
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 124.1600 mm): PTH pad 5 [GND] of U7
+    @(30.0000 mm, 156.0000 mm): PTH pad 1 [GND] of SW1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 124.1600 mm): PTH pad 5 [GND] of U7
+    @(72.0000 mm, 124.1600 mm): PTH pad 5 [GND] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 242.5400 mm): PTH pad 2 [GND] of SW3
+    @(30.9125 mm, 198.0000 mm): Pad 2 [GND] of R4 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.9125 mm, 198.0000 mm): Pad 2 [GND] of R4 on F.Cu
+    @(30.0000 mm, 156.0000 mm): PTH pad 1 [GND] of SW1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 30.0000 mm): PTH pad 2 [GND] of U1
+    @(30.0000 mm, 32.5400 mm): PTH pad 3 [GND] of U1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(33.5000 mm, 72.0000 mm): PTH pad 2 [GND] of C2
+    @(72.9500 mm, 72.0000 mm): Pad 2 [GND] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 124.1600 mm): PTH pad 5 [GND] of U8
+    @(72.0000 mm, 116.5400 mm): PTH pad 2 [GND] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 124.1600 mm): PTH pad 5 [GND] of U8
+    @(72.0000 mm, 156.0000 mm): PTH pad 1 [GND] of SW2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 200.5400 mm): PTH pad 2 [GND] of D2
+    @(30.9125 mm, 198.0000 mm): Pad 2 [GND] of R4 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.9500 mm, 72.0000 mm): Pad 2 [GND] of C3 on F.Cu
+    @(114.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(74.0000 mm, 30.0000 mm): PTH pad 2 [GND] of BT1
+    @(114.0000 mm, 32.5400 mm): PTH pad 2 [GND] of U2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 37.6200 mm): PTH pad 4 [GND] of U2
+    @(114.0000 mm, 32.5400 mm): PTH pad 2 [GND] of U2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 42.7000 mm): PTH pad 6 [GND] of U2
+    @(114.0000 mm, 37.6200 mm): PTH pad 4 [GND] of U2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 42.7000 mm): PTH pad 6 [GND] of U2
+    @(114.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 84.7000 mm): PTH pad 6 [GND] of U11
+    @(114.0000 mm, 87.2400 mm): PTH pad 7 [GND] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 84.7000 mm): PTH pad 6 [GND] of U11
+    @(114.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 89.7800 mm): PTH pad 8 [GND] of U11
+    @(114.0000 mm, 87.2400 mm): PTH pad 7 [GND] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.9125 mm, 198.0000 mm): Pad 2 [GND] of R5 on F.Cu
+    @(156.0000 mm, 200.5400 mm): PTH pad 2 [GND] of U10
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.9125 mm, 198.0000 mm): Pad 2 [GND] of R5 on F.Cu
+    @(72.0000 mm, 200.5400 mm): PTH pad 2 [GND] of D2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U4
+    @(156.9125 mm, 114.0000 mm): Pad 2 [GND] of R1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U4
+    @(114.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U4
+    @(156.0000 mm, 32.5400 mm): PTH pad 2 [GND] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.9125 mm, 114.0000 mm): Pad 2 [GND] of R1 on F.Cu
+    @(198.0000 mm, 116.5400 mm): PTH pad 2 [GND] of U9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(194.8500 mm, 27.7000 mm): Pad 1 [GND] of U12 on F.Cu
+    @(156.0000 mm, 32.5400 mm): PTH pad 2 [GND] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U5
+    @(240.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U6
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 116.5400 mm): PTH pad 2 [GND] of U9
+    @(198.0000 mm, 156.0000 mm): PTH pad 1 [GND] of Q1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 116.5400 mm): PTH pad 2 [GND] of U9
+    @(198.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 156.0000 mm): PTH pad 1 [GND] of Q1
+    @(198.0000 mm, 200.5400 mm): PTH pad 2 [GND] of PR1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 200.5400 mm): PTH pad 2 [GND] of PR1
+    @(156.0000 mm, 200.5400 mm): PTH pad 2 [GND] of U10
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 200.5400 mm): PTH pad 2 [GND] of PR1
+    @(240.0000 mm, 200.5400 mm): PTH pad 2 [GND] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 82.1600 mm): PTH pad 5 [GND] of U6
+    @(240.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U6
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 121.6200 mm): PTH pad 4 [GND] of M1
+    @(240.0000 mm, 82.1600 mm): PTH pad 5 [GND] of U6
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(245.0000 mm, 30.0000 mm): PTH pad 2 [GND] of C1
+    @(240.0000 mm, 74.5400 mm): PTH pad 2 [GND] of U6
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 50.3200 mm): PTH pad 17 [PRN_TX] of U1
+    @(198.0000 mm, 203.0800 mm): PTH pad 3 [PRN_TX] of PR1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 50.3200 mm): PTH pad 18 [PRN_RX] of U1
+    @(198.0000 mm, 205.6200 mm): PTH pad 4 [PRN_RX] of PR1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.9125 mm, 156.0000 mm): Pad 2 [LED_DRAIN] of R2 on F.Cu
+    @(200.5400 mm, 156.0000 mm): PTH pad 3 [LED_DRAIN] of Q1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 119.0800 mm): PTH pad 3 [I2C_SDA] of U7
+    @(72.0000 mm, 119.0800 mm): PTH pad 3 [I2C_SDA] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 32.5400 mm): PTH pad 4 [I2C_SDA] of U1
+    @(30.0000 mm, 119.0800 mm): PTH pad 3 [I2C_SDA] of U7
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 119.0800 mm): PTH pad 3 [I2C_SDA] of U8
+    @(114.0000 mm, 77.0800 mm): PTH pad 3 [I2C_SDA] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 77.0800 mm): PTH pad 3 [I2C_SDA] of U6
+    @(114.0000 mm, 77.0800 mm): PTH pad 3 [I2C_SDA] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 35.0800 mm): PTH pad 5 [I2C_SCL] of U1
+    @(30.0000 mm, 121.6200 mm): PTH pad 4 [I2C_SCL] of U7
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 121.6200 mm): PTH pad 4 [I2C_SCL] of U7
+    @(72.0000 mm, 121.6200 mm): PTH pad 4 [I2C_SCL] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 121.6200 mm): PTH pad 4 [I2C_SCL] of U8
+    @(114.0000 mm, 79.6200 mm): PTH pad 4 [I2C_SCL] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 79.6200 mm): PTH pad 4 [I2C_SCL] of U6
+    @(114.0000 mm, 79.6200 mm): PTH pad 4 [I2C_SCL] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 35.0800 mm): PTH pad 6 [MOT_IN1] of U1
+    @(198.0000 mm, 119.0800 mm): PTH pad 3 [MOT_IN1] of U9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 37.6200 mm): PTH pad 7 [MOT_IN2] of U1
+    @(198.0000 mm, 121.6200 mm): PTH pad 4 [MOT_IN2] of U9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 37.6200 mm): PTH pad 8 [ENC_A] of U1
+    @(240.0000 mm, 124.1600 mm): PTH pad 5 [ENC_A] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 40.1600 mm): PTH pad 9 [ENC_B] of U1
+    @(240.0000 mm, 126.7000 mm): PTH pad 6 [ENC_B] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 158.5400 mm): PTH pad 2 [LIM_HOME] of SW1
+    @(32.5400 mm, 40.1600 mm): PTH pad 10 [LIM_HOME] of U1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 42.7000 mm): PTH pad 11 [LIM_END] of U1
+    @(72.0000 mm, 158.5400 mm): PTH pad 2 [LIM_END] of SW2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 45.2400 mm): PTH pad 13 [UVC_EN] of U1
+    @(72.0000 mm, 203.0800 mm): PTH pad 3 [UVC_EN] of D2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 203.0800 mm): PTH pad 3 [UVC_EN] of D2
+    @(113.0875 mm, 198.0000 mm): Pad 1 [UVC_EN] of R5 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 45.2400 mm): PTH pad 14 [HX_DT] of U1
+    @(156.0000 mm, 203.0800 mm): PTH pad 3 [HX_DT] of U10
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 47.7800 mm): PTH pad 15 [HX_SCK] of U1
+    @(156.0000 mm, 205.6200 mm): PTH pad 4 [HX_SCK] of U10
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 240.0000 mm): PTH pad 1 [SCAN_BTN] of SW3
+    @(32.5400 mm, 47.7800 mm): PTH pad 16 [SCAN_BTN] of U1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 52.8600 mm): PTH pad 19 [TFT_RST] of U1
+    @(240.0000 mm, 205.6200 mm): PTH pad 4 [TFT_RST] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 213.2400 mm): PTH pad 7 [TFT_SCLK] of LCD1
+    @(32.5400 mm, 52.8600 mm): PTH pad 20 [TFT_SCLK] of U1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 220.8600 mm): PTH pad 10 [TFT_SCLK] of LCD1
+    @(240.0000 mm, 213.2400 mm): PTH pad 7 [TFT_SCLK] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 210.7000 mm): PTH pad 6 [TFT_MOSI] of LCD1
+    @(30.0000 mm, 55.4000 mm): PTH pad 21 [TFT_MOSI] of U1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 225.9400 mm): PTH pad 12 [TFT_MOSI] of LCD1
+    @(240.0000 mm, 210.7000 mm): PTH pad 6 [TFT_MOSI] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 218.3200 mm): PTH pad 9 [TFT_MISO] of LCD1
+    @(32.5400 mm, 55.4000 mm): PTH pad 22 [TFT_MISO] of U1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 228.4800 mm): PTH pad 13 [TFT_MISO] of LCD1
+    @(240.0000 mm, 218.3200 mm): PTH pad 9 [TFT_MISO] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 57.9400 mm): PTH pad 23 [TFT_CS] of U1
+    @(240.0000 mm, 203.0800 mm): PTH pad 3 [TFT_CS] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 57.9400 mm): PTH pad 24 [TFT_DC] of U1
+    @(240.0000 mm, 208.1600 mm): PTH pad 5 [TFT_DC] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 60.4800 mm): PTH pad 25 [TFT_BL] of U1
+    @(240.0000 mm, 215.7800 mm): PTH pad 8 [TFT_BL] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(32.5400 mm, 60.4800 mm): PTH pad 26 [TOUCH_CS] of U1
+    @(240.0000 mm, 223.4000 mm): PTH pad 11 [TOUCH_CS] of LCD1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 124.1600 mm): PTH pad 5 [MOTOR_A] of U9
+    @(240.0000 mm, 114.0000 mm): PTH pad 1 [MOTOR_A] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 126.7000 mm): PTH pad 6 [MOTOR_B] of U9
+    @(240.0000 mm, 116.5400 mm): PTH pad 2 [MOTOR_B] of M1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of U7
+    @(72.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of U8
+    @(71.0500 mm, 72.0000 mm): Pad 1 [+3V3] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U11
+    @(114.0000 mm, 82.1600 mm): PTH pad 5 [+3V3] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U11
+    @(156.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of RT1
+    @(114.0000 mm, 82.1600 mm): PTH pad 5 [+3V3] of U11
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of RT1
+    @(72.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(156.0000 mm, 198.0000 mm): PTH pad 1 [+3V3] of U10
+    @(114.0000 mm, 114.0000 mm): PTH pad 1 [+3V3] of RT1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U5
+    @(156.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(198.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U5
+    @(240.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U6
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(201.1500 mm, 30.0000 mm): Pad 2 [+3V3] of U12 on F.Cu
+    @(194.8500 mm, 30.0000 mm): Pad 2 [+3V3] of U12 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(201.1500 mm, 30.0000 mm): Pad 2 [+3V3] of U12 on F.Cu
+    @(198.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(240.0000 mm, 119.0800 mm): PTH pad 3 [+3V3] of M1
+    @(240.0000 mm, 72.0000 mm): PTH pad 1 [+3V3] of U6
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.0000 mm, 30.0000 mm): PTH pad 1 [VBAT] of BT1
+    @(114.0000 mm, 35.0800 mm): PTH pad 3 [VBAT] of U2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 92.3200 mm): PTH pad 9 [TCS1_SDA] of U11
+    @(156.0000 mm, 77.0800 mm): PTH pad 3 [TCS1_SDA] of U4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 94.8600 mm): PTH pad 10 [TCS1_SCL] of U11
+    @(156.0000 mm, 79.6200 mm): PTH pad 4 [TCS1_SCL] of U4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 97.4000 mm): PTH pad 11 [TCS2_SDA] of U11
+    @(198.0000 mm, 77.0800 mm): PTH pad 3 [TCS2_SDA] of U5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 99.9400 mm): PTH pad 12 [TCS2_SCL] of U11
+    @(198.0000 mm, 79.6200 mm): PTH pad 4 [TCS2_SCL] of U5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 156.0000 mm): PTH pad 1 [LED_NODE] of D1
+    @(155.0875 mm, 156.0000 mm): Pad 1 [LED_NODE] of R2 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(114.0000 mm, 40.1600 mm): PTH pad 5 [VSYS] of U2
+    @(156.0000 mm, 30.0000 mm): PTH pad 1 [VSYS] of U3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(121.6200 mm, 114.0000 mm): PTH pad 2 [NTC_SENSE] of RT1
+    @(72.0000 mm, 126.7000 mm): PTH pad 6 [NTC_SENSE] of U8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(155.0875 mm, 114.0000 mm): Pad 1 [NTC_SENSE] of R1 on F.Cu
+    @(121.6200 mm, 114.0000 mm): PTH pad 2 [NTC_SENSE] of RT1
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

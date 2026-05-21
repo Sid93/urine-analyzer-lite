@@ -7,14 +7,15 @@ Single source of truth = the master pin map in firmware/main/config.h
   - urine_analyzer_lite.net   KiCad legacy netlist (File > Import Netlist in Pcbnew)
   - NETLIST.md                human-readable connection table for review
 
-NOTE: This describes intended connectivity for engineer verification. Footprints are
-best-guess placeholders — confirm/assign in KiCad before layout. Decoupling/bulk caps are
-included where load behavior demands them; the engineer should add per-rail 100 nF as needed.
+NOTE: This describes intended connectivity for engineer verification. Real KiCad footprints
+are assigned via footprints.py (modules use 2.54mm pin headers — verify pin ORDER against each
+module datasheet). Decoupling/bulk caps are included where load behavior demands them; add
+per-rail 100 nF at layout as standard practice.
 
 Run: python3 gen_netlist.py
 """
 
-import datetime
+import datetime, sys, os
 
 # ── Component model ───────────────────────────────────────────────────────────
 # Each component: ref, value, footprint(placeholder), description, and pins:
@@ -181,11 +182,17 @@ COMPONENTS = [
 ]
 
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+import footprints as F
+
 def build_nets():
+    """net -> list of (ref, pad_number, pin_name). Pad numbers come from footprints.py
+    so the netlist matches the schematic pin numbers and the PCB pads."""
     nets = {}
     for ref, _val, _fp, _desc, pins in COMPONENTS:
-        for pin_no, (pin_name, net) in pins.items():
-            nets.setdefault(net, []).append((ref, pin_no, pin_name))
+        for i, (pin_id, (pin_name, net)) in enumerate(pins.items()):
+            pad = F.pad_of(ref, pin_id, i + 1)
+            nets.setdefault(net, []).append((ref, pad, pin_name))
     return dict(sorted(nets.items()))
 
 
@@ -197,10 +204,10 @@ def emit_kicad_net(path):
                f'(date "{ts}") (tool "gen_netlist.py"))')
     # components
     out.append("  (components")
-    for ref, val, fp, desc, _pins in COMPONENTS:
+    for ref, val, _fp, desc, _pins in COMPONENTS:
         out.append(f'    (comp (ref "{ref}")')
         out.append(f'      (value "{val}")')
-        out.append(f'      (footprint "{fp}")')
+        out.append(f'      (footprint "{F.footprint_of(ref)}")')
         out.append(f'      (description "{desc}"))')
     out.append("  )")
     # nets
@@ -227,10 +234,10 @@ def emit_markdown(path):
     lines.append("")
     lines.append("## Components")
     lines.append("")
-    lines.append("| Ref | Value | Footprint (placeholder) | Description |")
+    lines.append("| Ref | Value | Footprint | Description |")
     lines.append("|---|---|---|---|")
-    for ref, val, fp, desc, _pins in COMPONENTS:
-        lines.append(f"| {ref} | {val} | `{fp}` | {desc} |")
+    for ref, val, _fp, desc, _pins in COMPONENTS:
+        lines.append(f"| {ref} | {val} | `{F.footprint_of(ref)}` | {desc} |")
     lines.append("")
     lines.append("## Nets")
     lines.append("")
