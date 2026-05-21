@@ -1,0 +1,42 @@
+{
+  "type": "web_search_results",
+  "tool": "firecrawl",
+  "query": "India Medical Devices Rules 2017 IVD Class A B C registration process manufacturer license CDSCO site:cdsco.gov.in OR site:mohfw.gov.in",
+  "results": [
+    {
+      "title": "Circulars",
+      "url": "https://cdsco.gov.in/opencms/opencms/en/Acts-and-rules/Medical-Devices-Rules",
+      "domain": "cdsco.gov.in",
+      "description": "{{description}}, he Central Drugs Standard Control Organisation(CDSCO)under Directorate General of Health Services,Ministry of Health & Family Welfare,Government of India is the National Regulatory Authority (NRA) of India.",
+      "favicon_url": null
+    },
+    {
+      "title": "Medical device & diagnostics",
+      "url": "https://cdsco.gov.in/opencms/opencms/en/Medical-Device-Diagnostics/Medical-Device-Diagnostics/",
+      "domain": "cdsco.gov.in",
+      "description": "{{description}}, he Central Drugs Standard Control Organisation(CDSCO)under Directorate General of Health Services,Ministry of Health & Family Welfare,Government of India is the National Regulatory Authority (NRA) of India.",
+      "favicon_url": null
+    },
+    {
+      "title": "Chapter -2 Regulation of Medical Device- Medical Device Rules 2017 |Indian CDSCO MDR 2017|IVDs| L-3 - YouTube",
+      "url": "https://www.youtube.com/watch?v=MYK1qKNS8tY",
+      "domain": "www.youtube.com",
+      "description": "Chapter -2 Regulation of Medical Device- Medical Device Rules 2017 |Indian CDSCO MDR 2017|IVDs| L-3 @ivdmanufacturing7208 MEDICAL DEVICES RULES, 2017MINISTRY..., Chapter -2 Regulation of Medical Device- Medical Device Rules 2017 |Indian CDSCO MDR 2017|IVDs| L-3 @ivdmanufacturing7208 MEDICAL DEVICES RULES, 2017MINISTRY...",
+      "favicon_url": "https://www.youtube.com/s/desktop/d2cf868e/img/favicon_32x32.png"
+    },
+    {
+      "title": "InVitro Diagnostics",
+      "url": "https://cdsco.gov.in/opencms/opencms/en/Medical-Device-Diagnostics/InVitro-Diagnostics/",
+      "domain": "cdsco.gov.in",
+      "description": "{{description}}, he Central Drugs Standard Control Organisation(CDSCO)under Directorate General of Health Services,Ministry of Health & Family Welfare,Government of India is the National Regulatory Authority (NRA) of India.",
+      "favicon_url": null
+    },
+    {
+      "title": "India Medical Device Registration and Market Access",
+      "url": "https://asiaactual.com/india/medical-device-registration/",
+      "domain": "asiaactual.com",
+      "description": "Asia Actual's Delhi office is staffed with experienced, bi-lingual professionals that help companies register their medical devices in India., GURGAON WEATHER - WeatherWidget.io",
+      "favicon_url": "https://asiaactual.com/wp-content/uploads/2020/03/FC-AA-Lotus-1.png"
+    }
+  ]
+}

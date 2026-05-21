@@ -1,0 +1,42 @@
+{
+  "type": "web_search_results",
+  "tool": "firecrawl",
+  "query": "benchtop urine analyzer manufacturing process dipstick reader design microcontroller image sensor calibration",
+  "results": [
+    {
+      "title": "Intelligent Method for Dipstick Urinalysis Using Smartphone Camera | Request PDF",
+      "url": "https://www.researchgate.net/publication/300838392_Intelligent_Method_for_Dipstick_Urinalysis_Using_Smartphone_Camera",
+      "domain": "www.researchgate.net",
+      "description": "Request PDF | Intelligent Method for Dipstick Urinalysis Using Smartphone Camera | This paper introduces an intelligent method for helping people to maintain their healthy by doing a self urinalysis utilising a smartphone camera.... | Find, read and cite all the research you need on ResearchGate",
+      "favicon_url": "https://c5.rgstatic.net/m/42199702882742/images/favicon/favicon-32x32.png"
+    },
+    {
+      "title": "\n            Smartphone-based mobile biosensors for the point-of-care testing of human metabolites - PMC\n        ",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9034388/",
+      "domain": "pmc.ncbi.nlm.nih.gov",
+      "description": "Rapid, accurate, portable and quantitative profiling of metabolic biomarkers is of great importance for disease diagnosis and prognosis. The recent development in the optical and electric biosensors based on the smartphone is promising for profiling ...",
+      "favicon_url": "https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/674d4f95/var/data/static/img/favicons/favicon-48x48.png"
+    },
+    {
+      "title": "Smartphone-based mobile biosensors for the point-of-care testing of human metabolites - ScienceDirect",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2590006422000527",
+      "domain": "www.sciencedirect.com",
+      "description": null,
+      "favicon_url": "https://www.sciencedirect.com/shared-assets/103/images/favSD.ico"
+    },
+    {
+      "title": "A Robust and User-Friendly Alternative to Densitometry Using Origami Biosensors and Digital Logic | ACS Sensors",
+      "url": "https://pubs.acs.org/doi/10.1021/acssensors.8b00452",
+      "domain": "pubs.acs.org",
+      "description": null,
+      "favicon_url": "https://pubs.acs.org/pb-assets/ux3/favicon-1635812676023.ico"
+    },
+    {
+      "title": "Biosensors for Personal Mobile Health: A System Architecture Perspective - Arumugam - 2020 - Advanced Materials Technologies - Wiley Online Library",
+      "url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/admt.201900720",
+      "domain": "advanced.onlinelibrary.wiley.com",
+      "description": "Recent advances in biosensors for collecting personal health measurements are presented here. Particular attention is given to how biosensors can be designed for smartphone integration. Examples of b...",
+      "favicon_url": "https://advanced.onlinelibrary.wiley.com/favicon.ico"
+    }
+  ]
+}

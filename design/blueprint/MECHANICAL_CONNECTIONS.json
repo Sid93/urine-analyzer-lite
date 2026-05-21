@@ -1,0 +1,197 @@
+[
+  {
+    "label": "Snap-fit / M3 screws",
+    "source": "white_led_array_mount",
+    "target": "optical_chamber_top"
+  },
+  {
+    "label": "Press-fit slot",
+    "source": "optical_diffuser",
+    "target": "optical_chamber_top"
+  },
+  {
+    "label": "M3 screws",
+    "source": "uvc_sterilizer_mount",
+    "target": "optical_chamber_top"
+  },
+  {
+    "label": "Mechanical interlock / Screws",
+    "source": "uvc_shield",
+    "target": "optical_chamber_top"
+  },
+  {
+    "label": "M3 screws",
+    "source": "ambient_light_sensor_mount",
+    "target": "optical_chamber_top"
+  },
+  {
+    "label": "Thermal press-fit",
+    "source": "heat_set_inserts",
+    "target": "optical_chamber_top"
+  },
+  {
+    "label": "mount",
+    "source": "mount_limit_home",
+    "target": "limit_switch_home"
+  },
+  {
+    "label": "mount",
+    "source": "mount_limit_end",
+    "target": "limit_switch_end"
+  },
+  {
+    "label": "mount",
+    "source": "temp_humidity_sensor_mount",
+    "target": "temp_humidity_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "ambient_light_sensor_mount",
+    "target": "ambient_light_sensor"
+  },
+  {
+    "label": "mount",
+    "source": "white_led_array_mount",
+    "target": "white_led_array"
+  },
+  {
+    "label": "mount",
+    "source": "uvc_sterilizer_mount",
+    "target": "uvc_sterilizer"
+  },
+  {
+    "source": "mount_tcs34725",
+    "target": "optical_chamber_top",
+    "label": "M2.5 screws"
+  },
+  {
+    "source": "mount_tcs34725",
+    "target": "rgb_sensor_tcs34725",
+    "label": "Snap-fit"
+  },
+  {
+    "source": "rgb_sensor_2",
+    "target": "mount_tcs34725",
+    "label": "M2.5 screws"
+  },
+  {
+    "source": "timing_belt_gt2",
+    "target": "pulley_gt2",
+    "label": "interlock"
+  },
+  {
+    "source": "adc_ads1115",
+    "target": "mount_mcu",
+    "label": "M2.5 screw"
+  },
+  {
+    "source": "high_cri_led",
+    "target": "white_led_array_mount",
+    "label": "Press fit"
+  },
+  {
+    "source": "optical_shroud",
+    "target": "optical_chamber_top",
+    "label": "Adhesive / Snap-fit"
+  },
+  {
+    "source": "single_strip_tray",
+    "target": "shortened_chassis_base",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "injection_molded_enclosure",
+    "label": "Snap-fit clips"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "mount_mcu",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "belt_tensioner_mount",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "mount_limit_home",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "mount_limit_end",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "optical_chamber_top",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "temp_humidity_sensor_mount",
+    "label": "M3 screws"
+  },
+  {
+    "source": "shortened_chassis_base",
+    "target": "start_button",
+    "label": "Panel mount nut"
+  },
+  {
+    "source": "disposable_liner",
+    "target": "single_strip_tray",
+    "label": "place-in"
+  },
+  {
+    "source": "acrylic_flattening_guard",
+    "target": "single_strip_tray",
+    "label": "M2 screw standoffs"
+  },
+  {
+    "source": "white_cal_standard",
+    "target": "single_strip_tray",
+    "label": "recessed adhesive mount"
+  },
+  {
+    "source": "thermal_printer",
+    "target": "printer_mount",
+    "label": "M2.5 screws"
+  },
+  {
+    "source": "printer_mount",
+    "target": "injection_molded_enclosure",
+    "label": "M3 screws"
+  },
+  {
+    "source": "load_cell",
+    "target": "shortened_chassis_base",
+    "label": "M3 bolts"
+  },
+  {
+    "source": "load_cell_base",
+    "target": "load_cell",
+    "label": "M4 center bolt"
+  },
+  {
+    "source": "tft_display_43",
+    "target": "injection_molded_enclosure",
+    "label": "Adhesive gasket"
+  },
+  {
+    "source": "mount_n20_motor",
+    "target": "shortened_chassis_base",
+    "label": "M3 screws"
+  },
+  {
+    "source": "dc_motor_n20_encoder",
+    "target": "mount_n20_motor",
+    "label": "M2 screws"
+  },
+  {
+    "source": "h_bridge_l298n_mini",
+    "target": "shortened_chassis_base",
+    "label": "M2 standoffs"
+  }
+]

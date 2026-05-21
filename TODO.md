@@ -95,9 +95,17 @@
 
 ---
 
-## Regulatory / Quality (future)
+## Regulatory / Quality — Stage 0 Foundation (see `regulatory/`)
 
-- 🔲 CE / BIS marking assessment
-- 🔲 IEC 61010-1 electrical safety review
+- ✅ Target Product Profile + Intended Use (`regulatory/00_...`)
+- ✅ CDSCO classification & pathway — best-guess Class B (`regulatory/01_...`)
+- ✅ Applicable standards matrix (`regulatory/02_...`)
+- ✅ ISO 14971 risk management file — skeleton (`regulatory/03_...`)
+- ✅ Preliminary FTO patent search — optics (`regulatory/04_...`)
+- 🔲 **DECIDE: proprietary strips vs commercial strips** (gates scope)
+- 🔲 **Confirm CDSCO class via regulatory consultant pre-submission**
+- 🔲 **DECIDE: keep or drop UV-C sterilization** (IEC 62471 burden vs benefit)
+- 🔲 Identify predicate device(s)
 - 🔲 ISO 13485 QMS alignment checklist
-- 🔲 510(k) pathway assessment (if exporting to US)
+- 🔲 Re-run FTO on Lens.org/Espacenet + check patent legal status/expiry
+- 🔲 CE / 510(k) pathway assessment (export, later)

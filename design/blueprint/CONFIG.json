@@ -1,0 +1,1598 @@
+{
+  "plan": "- Control via ESP32-S3 MCU for image processing and thermal management of the reagent reaction zone.\n- Optical system using a polarized camera module and white LED array with a frosted diffuser for uniform illumination.\n- Motorized sample delivery system using a NEMA 17 stepper motor and T8 lead screw for precise positioning of the dipstick tray.\n- Integrated sensing via SHT31 humidity/temp sensor, BH1750 ambient light sensor, and NTC thermistor for closed-loop environmental control.\n- Power system including a 3.7V LiPo battery, USB-C charging module, and high-efficiency buck-boost regulators for 5V and 9V rails.\n- Mechanical assembly utilizing an injection-molded or 3D-printed enclosure base, a motorized tray with flocking material, and a UV-C sterilization module.",
+  "nodes": [
+    {
+      "id": "limit_switch_home",
+      "name": "Home Limit Switch",
+      "pins": [
+        "COM",
+        "NO"
+      ],
+      "type": "sensor",
+      "partId": "33d559a2-1efa-4d69-8a76-8f1b11d7356a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-byCmRnbj9vkq_H57xJrYHNsqRLWz0fmPPA9kRL0iFQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFQLUw4ZHNucEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=KW12-3%20Micro%20Limit%20Switch&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "20x10x6mm",
+      "description": "Mechanical switch for manual touch-off height sensing.",
+      "productName": "KW12-3 Micro Limit Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=micro+limit+switch",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "limit_switch_end",
+      "name": "End Limit Switch",
+      "pins": [
+        "COM",
+        "NO"
+      ],
+      "type": "sensor",
+      "partId": "33d559a2-1efa-4d69-8a76-8f1b11d7356a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/-byCmRnbj9vkq_H57xJrYHNsqRLWz0fmPPA9kRL0iFQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFQLUw4ZHNucEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=KW12-3%20Micro%20Limit%20Switch&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "20x10x6mm",
+      "description": "Mechanical switch for manual touch-off height sensing.",
+      "productName": "KW12-3 Micro Limit Switch",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=micro+limit+switch",
+      "estimatedCost": 1.5
+    },
+    {
+      "id": "temp_humidity_sensor",
+      "name": "Environmental Sensor",
+      "pins": [
+        "VIN",
+        "GND",
+        "SCL",
+        "SDA"
+      ],
+      "type": "sensor",
+      "partId": "9e7cdbd9-c7cb-43b4-b7bb-043d803ce614",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/C4AKYczwmOxOONEXob4TZ8ZrHsElmqvj61E7m0Xdlfg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFJaDlBeHRBeEwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=SHT31-D%20Module&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "18x12x3mm",
+      "description": "High-accuracy digital temperature and humidity sensor with I2C interface for high sensitivity.",
+      "productName": "SHT31-D Module",
+      "purchaseUrl": "https://www.adafruit.com/product/2857",
+      "estimatedCost": 8.5
+    },
+    {
+      "id": "ambient_light_sensor",
+      "name": "Ambient Light Sensor",
+      "pins": [
+        "VCC",
+        "GND",
+        "SCL",
+        "SDA",
+        "ADDR"
+      ],
+      "type": "sensor",
+      "partId": "1399d256-ad2e-4527-9f8b-40597179628a",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/D6TKcMCO_nyToZjZN0byCjCGUGzI3jv1_7KyvQC25KA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9yZXMu/dXRtZWwuY29tL0lt/YWdlcy9VRWRpdG9y/L2Y3NDA1NTRiLTk4/NDAtNDJhZS1hMjUz/LTVhMThmMjI1MTFk/ZC5wbmc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=BH1750%20FVI&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "19x14x2mm",
+      "productName": "BH1750 FVI",
+      "purchaseUrl": "https://www.amazon.com/s?k=BH1750+sensor",
+      "estimatedCost": 4
+    },
+    {
+      "id": "white_led_array",
+      "name": "Illumination LED",
+      "pins": [
+        "ANODE",
+        "CATHODE"
+      ],
+      "type": "actuator",
+      "partId": "9cd44a4b-96a2-493c-ab1e-b1813faad0f4",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/x7Eq1Kaq4cGFEGw3DJv3GNLc1o5-_ZoxA1XS4C7nWY0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9sZWVz/ZWxlY3Ryb25pYy5j/b20vNTYxNzgtbGFy/Z2VfZGVmYXVsdC9s/ZWQtc3RyaXAtY29i/LTQ4MC01bW0tMjR2/ZGMtd2FybS13aGl0/ZS0zMDAway01LW1l/dGVyLXBrZy5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=5mm%20Warm%20White%20LED%203000K&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "5x5x9mm",
+      "productName": "5mm Warm White LED 3000K",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=5mm+white+led",
+      "estimatedCost": 0.2
+    },
+    {
+      "id": "uvc_sterilizer",
+      "name": "UV-C Sterilization LED",
+      "pins": [
+        "V+",
+        "V-"
+      ],
+      "type": "actuator",
+      "partId": "d68ad085-cd03-4ae7-a217-828d3130d92b",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/T9gvS9e_twuvYRpWzPH_Qo20jxZEwyyqFGoaMdY6tHA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zLmFs/aWNkbi5jb20vQHNj/MDQva2YvSDY0MGMy/OTczMGJhOTRhYmZh/ZGZhNWVlZjU3Mjli/MDAybi5qcGdfMzAw/eDMwMC5qcGc",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=275nm%20UVC%20LED%20Module&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "20x20x3mm",
+      "productName": "275nm UVC LED Module",
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=UVC+LED+275nm",
+      "estimatedCost": 12
+    },
+    {
+      "id": "lipo_battery",
+      "name": "System Battery",
+      "pins": [
+        "B+",
+        "B-"
+      ],
+      "type": "power",
+      "partId": "56b0bc7d-d9f7-4581-aa94-79a3223ce5a7",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/PARbqbHry1FKWHvyR8NOhcJIEGq-B5JbUnAlhRxnijg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/bWFrZXJmb2N1cy5j/b20vY2RuL3Nob3Av/cHJvZHVjdHMvTWFr/ZXJmb2N1czMuN1Yy/MDAwbUFoTGl0aGl1/bVJlY2hhcmdlYWJs/ZUJhdHRlcnkxUzND/TGlwb0JhdHRlcnl3/aXRoUHJvdGVjdGlv/bkJvYXJkX1BhY2tv/ZjRfMy5qcGc_dj0x/NjE4NDU1NDI2",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=3.7V%202000mAh%20LiPo&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "60x36x7mm",
+      "description": "Main power source for the device.",
+      "productName": "3.7V 2000mAh LiPo",
+      "purchaseUrl": "https://www.adafruit.com/product/2011",
+      "estimatedCost": 14
+    },
+    {
+      "id": "charging_module",
+      "name": "USB-C Charger",
+      "pins": [
+        "IN+",
+        "IN-",
+        "B+",
+        "B-",
+        "OUT+",
+        "OUT-"
+      ],
+      "type": "power",
+      "partId": "c36b6c10-2e31-4fdd-9e85-44d6e1e10350",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/Ct_DmMTfYyOtyxyIeHPxdwzNZEoJZ_EH6pmatxhzwsM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/ODF0dFZFVzN3Ukwu/anBn",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=TP4056%20USB-C%20Module&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "25x19x5mm",
+      "description": "Manages charging of the LiPo battery via a USB-C input.",
+      "productName": "TP4056 USB-C Module",
+      "purchaseUrl": "https://www.amazon.com/s?k=TP4056+USB-C",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "buck_boost_regulator",
+      "name": "5V/9V Voltage Regulator",
+      "pins": [
+        "VIN",
+        "GND",
+        "VOUT",
+        "EN"
+      ],
+      "type": "power",
+      "partId": "36c5c34f-3c6b-4c42-8ea6-49d50a79cbea",
+      "category": "electrical",
+      "imageUrl": "https://imgs.search.brave.com/50AuHMfxveL5gaWCTC0e5xWrPMoFswGxsEXpRUKnMYk/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9hLnBv/bG9sdS1maWxlcy5j/b20vcGljdHVyZS8w/SjExNTgzLjEwMC5q/cGc_MmNjNjk0ZDM5/ZTMwZTA0ZmNmNTRm/NmU4NTk2ZjFkOTY",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=S13V25F5%20Multi-Regulator&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "23x23x10mm",
+      "productName": "S13V25F5 Multi-Regulator",
+      "purchaseUrl": "https://www.pololu.com/category/133/step-up-step-down-voltage-regulators",
+      "estimatedCost": 12
+    },
+    {
+      "id": "optical_chamber_top",
+      "name": "Optical Chamber Housing",
+      "type": "3d_printed",
+      "partId": "ef10935b-7dfe-4842-919b-649b0d27d230",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Optical%20Chamber%20Housing&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "60x60x50mm",
+      "description": "Light-tight enclosure for the photodiode and LED array to ensure consistent readings.",
+      "productName": "Optical Chamber Housing",
+      "purchaseUrl": "https://www.amazon.com/s?k=Black+PLA+filament",
+      "estimatedCost": 2,
+      "printSettings": "100% infill, 0.1mm layer, black material"
+    },
+    {
+      "id": "mount_mcu",
+      "name": "MCU Mounting Tray",
+      "type": "3d_printed",
+      "partId": "040146e6-6969-4dc2-822a-3a77cdd65f32",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/I0lCQ9HonZOIEasO8MQXqd-oa1SEzXBw8HLjatPPTqs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxvZnRhZXJvYXJj/aGl0ZWN0cy5jb20v/c2l0ZXMvZGVmYXVs/dC9maWxlcy9zdHls/ZXMvcHJvZHVjdF9p/bWFnZV81NjV4NDAw/L3B1YmxpYy8yMDIw/LTEyLzYlMjBNQ1Ul/MjBUcmF5XzEuanBn/P2l0b2s9N2hRdUNJ/T00",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=MCU%20Mounting%20Tray&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "main_mcu",
+      "dimensions": "60x40x10mm",
+      "description": "Snap-fit bracket for the ESP32-S3 controller board.",
+      "productName": "MCU Mounting Tray",
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "estimatedCost": 0.5,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "mount_limit_home",
+      "name": "Home Switch Bracket",
+      "type": "3d_printed",
+      "partId": "72b89d02-7414-4a77-a611-d75c606814b5",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Home%20Switch%20Bracket&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "limit_switch_home",
+      "dimensions": "20x15x10mm",
+      "description": "Adjustable mount for the home position limit switch.",
+      "productName": "Home Switch Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=limit+switch+mount",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "mount_limit_end",
+      "name": "End Switch Bracket",
+      "type": "3d_printed",
+      "partId": "391ade1b-a321-488a-b478-8dae42e9a51e",
+      "category": "mechanical",
+      "material": "PLA",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=End%20Switch%20Bracket&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "limit_switch_end",
+      "dimensions": "20x15x10mm",
+      "description": "Adjustable mount for the end-of-travel limit switch.",
+      "productName": "End Switch Bracket",
+      "purchaseUrl": "https://www.amazon.com/s?k=limit+switch+mount",
+      "estimatedCost": 0.3,
+      "printSettings": "20% infill, 0.2mm layer"
+    },
+    {
+      "id": "m3_screw_set",
+      "name": "M3 Hardware Pack",
+      "type": "misc",
+      "partId": "c26726a1-20fe-462a-b8d5-fe17a318bc2f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/GgNDBN7q7-zkcnL69s2OqTli1rNIXAKOVWiLiPRt6aI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tb25z/dGVyYm9sdHMuY29t/L2Nkbi9zaG9wL2Zp/bGVzL1NTX0RJTjkx/Ml9NM3gxMC5qcGc_/dj0xNzU2NzQ5NDI2/JndpZHRoPTE2MDA",
+      "material": "Stainless Steel",
+      "quantity": 20,
+      "amazonUrl": "https://www.amazon.com/s?k=M3%20Stainless%20Socket%20Head%20Screws&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "M3x10mm",
+      "description": "Various M3 screws for mounting motors, rails, and PCB supports.",
+      "productName": "M3 Stainless Socket Head Screws",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+screw+assortment",
+      "estimatedCost": 0.05
+    },
+    {
+      "id": "heat_set_inserts",
+      "name": "M3 Heat-Set Inserts",
+      "type": "misc",
+      "partId": "a8fec6b8-c88c-4a0e-a2b8-1ddc0a92669f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/6xZO7AHI7dm7FSBhkUYguWysfRofy8ClSpCfyrgRfFg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxN2VXN0JkRm9M/LmpwZw",
+      "quantity": 12,
+      "amazonUrl": "https://www.amazon.com/s?k=M3%20Brass%20Threaded%20Inserts&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "M3x5mm",
+      "description": "Brass inserts for creating durable threads in 3D-printed parts.",
+      "productName": "M3 Brass Threaded Inserts",
+      "purchaseUrl": "https://www.amazon.com/s?k=M3+heat+set+inserts",
+      "estimatedCost": 0.15
+    },
+    {
+      "id": "optical_diffuser",
+      "name": "LED Diffuser Plate",
+      "type": "structural",
+      "partId": "fdeaaa9a-e613-4c18-8179-41a352d6c3ae",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/NMaukpQ5Jb4sROzisWjmC9TcHj7UdoJ_PCYHyxrQDtk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTEzb01YcWFOd0wu/anBn",
+      "material": "Acrylic",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Frosted%20Acrylic%20Sheet&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "50x20x2mm",
+      "description": "Diffuses the white LED array for uniform illumination of reagent pads.",
+      "productName": "Frosted Acrylic Sheet",
+      "purchaseUrl": "https://www.amazon.com/s?k=frosted+acrylic+sheet",
+      "estimatedCost": 2.5
+    },
+    {
+      "id": "uvc_shield",
+      "name": "UV-C Safety Shield",
+      "type": "enclosure",
+      "partId": "cfdeb9e3-21f2-4acb-815b-4b76345a552f",
+      "category": "mechanical",
+      "material": "Aluminum",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=UV-C%20Safety%20Shield&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "dimensions": "80x40x2mm",
+      "description": "Protective internal shield to prevent UV-C leakage during sterilization.",
+      "purchaseUrl": "https://www.homedepot.com/s/aluminum+sheet",
+      "estimatedCost": 4
+    },
+    {
+      "id": "temp_humidity_sensor_mount",
+      "name": "Environmental Sensor Mount",
+      "type": "3d_printed",
+      "partId": "72ce04b7-8f9a-4c90-931f-bbb993ca1e6f",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/H_lx_2g6ZmI7lUBZN4B1ywADc11UJbIBHAkXNL_GX7E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9odWJ0/cm9uaWNzLmluL2lt/YWdlL2NhY2hlL2Nh/dGFsb2cvc2FnYXIv/U0VONTUtU0ROLVQt/QWlyLVF1YWxpdHkt/U2Vuc29yLU1vZHVs/ZS01NTB4NTUwdy5q/cGc",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "FDM, 0.1mm layer height, 50% infill"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/s?k=Environmental%20Sensor%20Mount&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "temp_humidity_sensor",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Environmental Sensor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "productName": "Environmental Sensor Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "ambient_light_sensor_mount",
+      "name": "Ambient Light Sensor Mount",
+      "type": "3d_printed",
+      "partId": "f8383fca-5630-4014-9a45-7c7623d52c72",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/6zN8HUxXEGN8DwbxBvzHNg1KJGvFzrrr0KwNxoN4Omk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudGhlZW5naW5l/ZXJpbmdwcm9qZWN0/cy5jb20vaW1hZ2Uv/bWFpbi8yMDI0LzEy/LzEtdmNubDQwNDAt/cHJveGltaXR5LWFu/ZC1hbWJpZW50LWxp/Z2h0LXNlbnNvci0y/LmpwZw",
+      "material": "PETG",
+      "quantity": 1,
+      "research": {
+        "specs": [
+          {
+            "label": "print_settings",
+            "value": "0.2mm layer height, 20% infill, no supports"
+          }
+        ]
+      },
+      "amazonUrl": "https://www.amazon.com/s?k=Ambient%20Light%20Sensor%20Mount&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "ambient_light_sensor",
+      "dimensions": "30x30x15mm",
+      "description": "Form-fitting cradle for the Ambient Light Sensor that holds the sensing surface in its rated orientation. Snap-fit retention so it can be removed for calibration without tools.",
+      "productName": "Ambient Light Sensor Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "white_led_array_mount",
+      "name": "Illumination LED Mount",
+      "type": "3d_printed",
+      "partId": "7a2a532a-815e-4b9d-9766-ebe9ac350da6",
+      "category": "mechanical",
+      "imageUrl": "https://imgs.search.brave.com/Gig3X2RydZXlOUI6xRb9N49ShdvEY1Dvvg_YUWgJ60k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxjb25saWdodGlu/Zy5jb20vbWVkaWEv/Y2F0YWxvZy9wcm9k/dWN0L2NhY2hlL2Yw/NzRmNzVjZjY2NDk4/ODVkNjAzY2U5NDAx/ZmNiZmNjLzEvMi8x/MjEwMC00NS13LWRy/YXdpbmdfMS5qcGc",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Illumination%20LED%20Mount&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "white_led_array",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the Illumination LED with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "productName": "Illumination LED Mount",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "uvc_sterilizer_mount",
+      "name": "UV-C Sterilization LED Mount",
+      "type": "3d_printed",
+      "partId": "5e325166-6411-4aab-b2ee-be83eba3b99f",
+      "category": "mechanical",
+      "material": "PETG",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=UV-C%20Sterilization%20LED%20Mount&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "mountsFor": "uvc_sterilizer",
+      "dimensions": "50x50x20mm",
+      "description": "Per-position bracket for the UV-C Sterilization LED with M3 mounting holes matched to its bolt pattern. Rated for the actuator's continuous torque/load class.",
+      "purchaseUrl": "",
+      "estimatedCost": 2,
+      "printSettings": "30% infill, 0.2mm layer, 4 perimeters"
+    },
+    {
+      "id": "white_cal_standard",
+      "name": "Calibration Target",
+      "type": "misc",
+      "category": "mechanical",
+      "quantity": 1,
+      "amazonUrl": "https://www.amazon.com/s?k=Labsphere%20Spectralon%20White%20Standard%2099%25%2010x10mm&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "description": "Highly Lambertian white reflectance standard for normalizing spectral sensor data.",
+      "productName": "Labsphere Spectralon White Standard 99% 10x10mm",
+      "purchaseUrl": "https://www.labsphere.com/product/spectralon-diffuse-reflectance-standards/",
+      "estimatedCost": 25
+    },
+    {
+      "id": "rgb_sensor_tcs34725",
+      "name": "RGB Color Sensor",
+      "productName": "Adafruit TCS34725 RGB Color Sensor",
+      "category": "electrical",
+      "type": "sensor",
+      "quantity": 1,
+      "estimatedCost": 7.95,
+      "purchaseUrl": "https://www.adafruit.com/product/1334",
+      "description": "High-accuracy RGB color sensor with IR filter and I2C interface for consistent color measurement.",
+      "pins": [
+        "VIN",
+        "GND",
+        "3V3",
+        "SCL",
+        "SDA",
+        "INT",
+        "LED"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=Adafruit%20TCS34725%20RGB%20Color%20Sensor&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/XoTg25GDXtQV5m3dmsjSwwq2JDF4Z7oHhdJBL4hSfnI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFseE9sU25zNUwu/anBn"
+    },
+    {
+      "id": "mount_tcs34725",
+      "name": "RGB Sensor Mount",
+      "productName": "TCS34725 Custom Bracket",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 0.5,
+      "purchaseUrl": "https://www.printables.com/search/models?q=TCS34725+mount",
+      "description": "3D-printed bracket to secure the TCS34725 sensor inside the optical chamber.",
+      "amazonUrl": "https://www.amazon.com/s?k=TCS34725%20Custom%20Bracket&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "rgb_sensor_2",
+      "name": "Secondary RGB Sensor",
+      "productName": "Adafruit TCS34725 RGB Color Sensor",
+      "category": "electrical",
+      "type": "sensor",
+      "quantity": 1,
+      "estimatedCost": 7.95,
+      "purchaseUrl": "https://www.adafruit.com/product/1334",
+      "description": "Second color sensor for differential or redundant reagent pad analysis.",
+      "pins": [
+        "VIN",
+        "GND",
+        "3V3",
+        "SCL",
+        "SDA",
+        "INT",
+        "LED"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=Adafruit%20TCS34725%20RGB%20Color%20Sensor&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/XoTg25GDXtQV5m3dmsjSwwq2JDF4Z7oHhdJBL4hSfnI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFseE9sU25zNUwu/anBn"
+    },
+    {
+      "id": "timing_belt_gt2",
+      "name": "GT2 Timing Belt",
+      "productName": "GT2 Timing Belt 2mm Pitch 6mm Wide",
+      "category": "mechanical",
+      "type": "mechanism",
+      "quantity": 1,
+      "estimatedCost": 5,
+      "purchaseUrl": "https://www.amazon.com/s?k=GT2+timing+belt+200mm",
+      "description": "Rubber belt used to translate rotational motion of the DC motor into linear motion.",
+      "amazonUrl": "https://www.amazon.com/s?k=GT2%20Timing%20Belt%202mm%20Pitch%206mm%20Wide&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "pulley_gt2",
+      "name": "GT2 Pulley",
+      "productName": "GT2 Timing Pulley 16 Teeth 3mm Bore",
+      "category": "mechanical",
+      "type": "mechanism",
+      "quantity": 2,
+      "estimatedCost": 3,
+      "purchaseUrl": "https://www.amazon.com/s?k=GT2+pulley+3mm+bore",
+      "description": "Aluminum pulleys for the belt drive system.",
+      "amazonUrl": "https://www.amazon.com/s?k=GT2%20Timing%20Pulley%2016%20Teeth%203mm%20Bore&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "belt_tensioner_mount",
+      "name": "Belt Tensioner",
+      "productName": "3D Printed Belt Tensioner",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 1,
+      "purchaseUrl": "N/A",
+      "description": "Adjustable mount to maintain proper tension on the timing belt.",
+      "amazonUrl": "https://www.amazon.com/s?k=3D%20Printed%20Belt%20Tensioner&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "adc_ads1115",
+      "name": "16-Bit ADC Module",
+      "productName": "ADS1115 4-Channel ADC with PGA",
+      "category": "electrical",
+      "type": "module",
+      "quantity": 1,
+      "estimatedCost": 6.5,
+      "purchaseUrl": "https://www.adafruit.com/product/1085",
+      "description": "High-precision 16-bit analog-to-digital converter to handle low-noise sensor data.",
+      "pins": [
+        "VDD",
+        "GND",
+        "SCL",
+        "SDA",
+        "ADDR",
+        "ALRT",
+        "A0",
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=ADS1115%204-Channel%20ADC%20with%20PGA&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/Db5zUinQEaA2Q0ryvNmO8AMrEpt00ciSAC2fFtzEaFc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0pWOEFB/T1N3ZTJGa0NPNFkv/cy1sNTAwLmpwZw"
+    },
+    {
+      "id": "high_cri_led",
+      "name": "High-CRI Reference LED",
+      "productName": "YujiLEDs 95+ CRI 5mm LED",
+      "category": "electrical",
+      "type": "actuator",
+      "quantity": 1,
+      "estimatedCost": 2.5,
+      "purchaseUrl": "https://www.yujiintl.com/high-cri-led-bulbs/",
+      "description": "Broad-spectrum white LED with high color rendering index for medical diagnostic accuracy.",
+      "pins": [
+        "ANODE",
+        "CATHODE"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=YujiLEDs%2095%2B%20CRI%205mm%20LED&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/z5nmMW46yGLnZgcS73A7xqplAyeBtjwQf0vysTbWF3k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zaG9w/LnBvd2VyZ2Vtcy5j/b20vY2RuL3Nob3Av/ZmlsZXMveXVqaWxl/ZHNfUkdCV18xMlYu/anBnP3Y9MTczNDM3/MDU5MSZ3aWR0aD0x/NDQ1"
+    },
+    {
+      "id": "optical_shroud",
+      "name": "Light Shield Shroud",
+      "productName": "Custom 3D-Printed Light Shield",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 1.5,
+      "purchaseUrl": "N/A",
+      "description": "An opaque gasket or shroud to seal the optical chamber against the dipstick surface.",
+      "amazonUrl": "https://www.amazon.com/s?k=Custom%203D-Printed%20Light%20Shield&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "start_button",
+      "name": "Scan Start Button",
+      "productName": "Momentary Tactile Push Button 6x6mm",
+      "category": "electrical",
+      "type": "sensor",
+      "quantity": 1,
+      "estimatedCost": 0.1,
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=momentary+tactile+button",
+      "description": "Triggers the automated measurement sequence when pressed.",
+      "pins": [
+        "1",
+        "2"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=Momentary%20Tactile%20Push%20Button%206x6mm&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/LYttibu59D_5dcfCJhH8oK5HbtQ2FAK-bYkZ8eI3mzM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFGTmhGR2tSVkwu/anBn"
+    },
+    {
+      "id": "led_driver_mosfet",
+      "name": "LED Control MOSFET",
+      "productName": "2N7000 N-Channel MOSFET",
+      "category": "electrical",
+      "type": "module",
+      "quantity": 1,
+      "estimatedCost": 0.5,
+      "purchaseUrl": "https://www.digikey.com/en/products/result?keywords=2N7000",
+      "description": "Allows MCU to control High-CRI LED intensity via PWM for calibration.",
+      "pins": [
+        "GATE",
+        "DRAIN",
+        "SOURCE"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=2N7000%20N-Channel%20MOSFET&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/LGQBGkmArZr62hZZJ5Ijh612HCwCOtZxfhAnzFbA9yo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9maWxl/cy5lYXN5Ym9tLmNv/bS9ibG9naW1nLzIw/MjIwMzAxLzE2NDYx/MTg4NDcwODgzLmpw/Zw"
+    },
+    {
+      "id": "mcu_s3",
+      "name": "Main Controller S3",
+      "productName": "ESP32-S3-DevKitC-1",
+      "category": "electrical",
+      "type": "mcu",
+      "quantity": 1,
+      "estimatedCost": 15,
+      "purchaseUrl": "https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-DEVKITC-1-N8R8/16162639",
+      "description": "Powerful dual-core MCU with native USB and enough RAM for UI rendering.",
+      "pins": [
+        "5V",
+        "3V3",
+        "GND",
+        "GPIO1",
+        "GPIO2",
+        "GPIO3",
+        "GPIO4",
+        "GPIO5",
+        "GPIO6",
+        "GPIO7",
+        "GPIO8",
+        "GPIO9",
+        "GPIO10",
+        "GPIO11",
+        "GPIO12",
+        "GPIO13",
+        "GPIO14",
+        "GPIO15",
+        "GPIO17",
+        "GPIO18",
+        "GPIO19",
+        "GPIO20"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=ESP32-S3-DevKitC-1&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/Yu9TG3BHsL-x_lo3riQYTwZNCiCOsV9tf20zMrx54II/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFMLTFkbW5qSkwu/anBn"
+    },
+    {
+      "id": "injection_molded_enclosure",
+      "name": "Manufacturable Main Shell",
+      "productName": "Custom ABS Enclosure",
+      "category": "mechanical",
+      "type": "enclosure",
+      "quantity": 1,
+      "estimatedCost": 15,
+      "purchaseUrl": "N/A",
+      "description": "Enclosure designed with 2-degree draft angles and uniform wall thickness for high-volume production.",
+      "amazonUrl": "https://www.amazon.com/s?k=Custom%20ABS%20Enclosure&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "disposable_liner",
+      "name": "Disposable Tray Liner",
+      "productName": "Whatman Grade 1 Filter Paper Strips",
+      "category": "mechanical",
+      "type": "misc",
+      "quantity": 100,
+      "estimatedCost": 0.15,
+      "purchaseUrl": "https://www.amazon.com/s?k=filter+paper+strips",
+      "description": "Pre-cut absorbent strips to be placed in the tray reservoir to soak up excess urine.",
+      "amazonUrl": "https://www.amazon.com/s?k=Whatman%20Grade%201%20Filter%20Paper%20Strips&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "acrylic_flattening_guard",
+      "name": "Clear Acrylic Guard",
+      "productName": "2mm Clear Acrylic Sheet (Laser Cut)",
+      "category": "mechanical",
+      "type": "structural",
+      "quantity": 1,
+      "estimatedCost": 3,
+      "purchaseUrl": "https://www.amazon.com/s?k=clear+acrylic+sheet+2mm",
+      "description": "A low-friction clear plate that holds the dipstick flat against the tray as the optical head passes over.",
+      "amazonUrl": "https://www.amazon.com/s?k=2mm%20Clear%20Acrylic%20Sheet%20(Laser%20Cut)&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "single_strip_tray",
+      "name": "Single-Strip Mini Tray",
+      "productName": "Miniature Dipstick Tray",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 2,
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "description": "Compact tray designed with a single 6mm wide channel for a single reagent strip.",
+      "amazonUrl": "https://www.amazon.com/s?k=Miniature%20Dipstick%20Tray&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "shortened_chassis_base",
+      "name": "Compact Chassis Base",
+      "productName": "Compact Main Chassis",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 3.5,
+      "purchaseUrl": "https://www.amazon.com/s?k=PLA+filament",
+      "description": "Redesigned chassis base with a smaller overall footprint and optimized mounting for the single-strip tray.",
+      "amazonUrl": "https://www.amazon.com/s?k=Compact%20Main%20Chassis&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "thermal_printer",
+      "name": "Thermal Receipt Printer",
+      "productName": "CSN-A2 Micro Thermal Printer",
+      "category": "electrical",
+      "type": "actuator",
+      "quantity": 1,
+      "estimatedCost": 35,
+      "purchaseUrl": "https://www.adafruit.com/product/597",
+      "description": "Integrated thermal printer for diagnostic reports.",
+      "pins": [
+        "VH",
+        "GND",
+        "TXD",
+        "RXD"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=CSN-A2%20Micro%20Thermal%20Printer&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/FCebiwdB9-xoHiK1THjXWU4km5qSQ4sF-5YTwoZxGVY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFmRVZzemhGUUwu/anBn"
+    },
+    {
+      "id": "load_cell",
+      "name": "Weight Sensor",
+      "productName": "HX711 Load Cell Kit 1kg",
+      "category": "electrical",
+      "type": "sensor",
+      "quantity": 1,
+      "estimatedCost": 8,
+      "purchaseUrl": "https://www.amazon.com/s?k=HX711+load+cell+kit",
+      "description": "Senses sample cup placement and volume verification.",
+      "pins": [
+        "VCC",
+        "GND",
+        "DT",
+        "SCK"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=HX711%20Load%20Cell%20Kit%201kg&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/8Ap3PH55tq96z7Cn71KS3hx5Ckc74C6TO7WHI_fi8kk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL0tqOEFB/T1N3OG85a1FVQksv/cy1sNTAwLnBuZw"
+    },
+    {
+      "id": "tft_display_43",
+      "name": "4.3in Capacitive Touch Display",
+      "productName": "Waveshare 4.3inch DSI LCD",
+      "category": "electrical",
+      "type": "display",
+      "quantity": 1,
+      "estimatedCost": 45,
+      "purchaseUrl": "https://www.waveshare.com/4.3inch-dsi-lcd.htm",
+      "description": "Larger medical-grade capacitive touch interface.",
+      "pins": [
+        "5V",
+        "GND",
+        "SDA",
+        "SCL",
+        "INT",
+        "RST"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=Waveshare%204.3inch%20DSI%20LCD&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/YtFv9m9k4htS2QBjq3oz0US4gNlTJGoy9VtjlzQTnYI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9lbGVj/dHJvbmlrei5jb20v/aW1hZ2VzLzQtM2lu/Y2gtZHNpLWxjZC1k/aXNwbGF5LXBpXzEu/anBn"
+    },
+    {
+      "id": "printer_mount",
+      "name": "Printer Internal Bracket",
+      "productName": "3D Printed Printer Mount",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 2.5,
+      "purchaseUrl": "",
+      "amazonUrl": "https://www.amazon.com/s?k=3D%20Printed%20Printer%20Mount&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "load_cell_base",
+      "name": "Sample Scale Plate",
+      "productName": "3D Printed Scale Plate",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 1.5,
+      "purchaseUrl": "",
+      "amazonUrl": "https://www.amazon.com/s?k=3D%20Printed%20Scale%20Plate&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    },
+    {
+      "id": "dc_motor_n20_encoder",
+      "name": "N20 DC Gear Motor with Encoder",
+      "productName": "GA12-N20 DC Gear Motor 6V 200RPM with Hall Encoder",
+      "category": "electrical",
+      "type": "actuator",
+      "quantity": 1,
+      "estimatedCost": 8.5,
+      "purchaseUrl": "https://www.amazon.com/s?k=N20+motor+encoder+6V",
+      "description": "Compact DC motor with integrated quadrature encoder for position feedback.",
+      "pins": [
+        "M1",
+        "M2",
+        "VCC",
+        "GND",
+        "A",
+        "B"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=GA12-N20%20DC%20Gear%20Motor%206V%20200RPM%20with%20Hall%20Encoder&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/wJ5UmqbKPmbnKWFC9WYMZi024-BuWZaKTbufvqmjgqQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGlu/a3JvYm90aWNzLmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy9XZWxs/LW1hZGUtR0ExMi1O/MjAtZGMtZ2Vhci1t/b3Rvci13aXRoLWVu/Y29kZXItc3BlZWQt/dmVsb2NpdHktbWVh/c3VyZW1lbnQtNlYt/NTAwcnBtLUZPUi1t/aW5pXzUzNXguanBn/P3Y9MTY0NDUxMjAx/Ng"
+    },
+    {
+      "id": "h_bridge_l298n_mini",
+      "name": "Mini H-Bridge Motor Driver",
+      "productName": "MX1508 Dual DC Motor Driver",
+      "category": "electrical",
+      "type": "module",
+      "quantity": 1,
+      "estimatedCost": 2,
+      "purchaseUrl": "https://www.amazon.com/s?k=MX1508+motor+driver",
+      "description": "Small dual-channel H-bridge for controlling DC motor direction and speed.",
+      "pins": [
+        "IN1",
+        "IN2",
+        "IN3",
+        "IN4",
+        "OUT1",
+        "OUT2",
+        "OUT3",
+        "OUT4",
+        "VCC",
+        "GND"
+      ],
+      "amazonUrl": "https://www.amazon.com/s?k=MX1508%20Dual%20DC%20Motor%20Driver&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl",
+      "imageUrl": "https://imgs.search.brave.com/uLQc8_-_jkpRPVrPhdX4-XdzucqXLX3ilavTst8K4l4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmVsZWxlY3Ryb25p/Yy5jb20vbWVkaWEv/dXBsb2Fkcy9jYXRh/bG9nL2RlZmF1bHQv/cHJvZHVjdF8yNzQ1/XzE2NTYzNDE4MTJf/NDgwMzUuanBn"
+    },
+    {
+      "id": "mount_n20_motor",
+      "name": "N20 Motor Bracket",
+      "productName": "N20 Motor Mounting Bracket",
+      "category": "mechanical",
+      "type": "3d_printed",
+      "quantity": 1,
+      "estimatedCost": 0.5,
+      "purchaseUrl": "https://www.amazon.com/s?k=N20+motor+bracket",
+      "description": "3D-printed adapter to mount the N20 motor to the existing chassis base.",
+      "amazonUrl": "https://www.amazon.com/s?k=N20%20Motor%20Mounting%20Bracket&linkCode=ll2&tag=blueprintam-20&linkId=4ccf4163514d07f9bf547ac1c23fd3e0&language=en_US&ref_=as_li_ss_tl"
+    }
+  ],
+  "notes": [
+    "urine dipstick analyzer",
+    "automated diagnostic",
+    "LED photo-diode analysis",
+    "reagent strip sensing",
+    "precision optical chamber",
+    "medical maker project"
+  ],
+  "projectName": "Urine Dipstick Analyzer (1)",
+  "originalPrompt": "Urine Dipstick Analyzer\nAutomated diagnostic device uses an LED photo-diode to analyze urine reagent strips",
+  "instructionSteps": [
+    {
+      "id": "fabricate",
+      "subSteps": [
+        {
+          "id": "fabricate_1",
+          "title": "Print optical chamber components in black PLA",
+          "partIds": [
+            "optical_chamber_top",
+            "optical_shroud"
+          ]
+        },
+        {
+          "id": "fabricate_2",
+          "title": "Print sensor and actuator mounts in PETG",
+          "partIds": [
+            "temp_humidity_sensor_mount",
+            "ambient_light_sensor_mount",
+            "white_led_array_mount",
+            "uvc_sterilizer_mount",
+            "mount_tcs34725"
+          ]
+        },
+        {
+          "id": "fabricate_3",
+          "title": "Install heat-set inserts into optical chamber",
+          "partIds": [
+            "optical_chamber_top",
+            "heat_set_inserts"
+          ]
+        },
+        {
+          "id": "fabricate_4",
+          "title": "Cut and prepare acrylic flattening guard and diffuser",
+          "partIds": [
+            "optical_diffuser",
+            "acrylic_flattening_guard"
+          ]
+        },
+        {
+          "id": "fabricate_5",
+          "title": "Print chassis base and tray components",
+          "partIds": [
+            "shortened_chassis_base",
+            "single_strip_tray",
+            "mount_mcu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wire",
+      "subSteps": [
+        {
+          "id": "wire_1",
+          "title": "Connect LiPo battery to charging and regulation circuit",
+          "partIds": [
+            "lipo_battery",
+            "charging_module",
+            "buck_boost_regulator"
+          ]
+        },
+        {
+          "id": "wire_2",
+          "title": "Solder I2C bus harness for sensors and ADC",
+          "partIds": [
+            "mcu_s3",
+            "rgb_sensor_tcs34725",
+            "rgb_sensor_2",
+            "temp_humidity_sensor",
+            "ambient_light_sensor",
+            "adc_ads1115"
+          ]
+        },
+        {
+          "id": "wire_3",
+          "title": "Wire N20 motor and encoder to H-bridge driver",
+          "partIds": [
+            "dc_motor_n20_encoder",
+            "h_bridge_l298n_mini",
+            "mcu_s3"
+          ]
+        },
+        {
+          "id": "wire_4",
+          "title": "Connect high-power LEDs and MOSFET driver",
+          "partIds": [
+            "white_led_array",
+            "uvc_sterilizer",
+            "led_driver_mosfet",
+            "high_cri_led"
+          ]
+        },
+        {
+          "id": "wire_5",
+          "title": "Wire thermal printer and load cell to MCU",
+          "partIds": [
+            "thermal_printer",
+            "load_cell",
+            "mcu_s3"
+          ]
+        },
+        {
+          "id": "wire_6",
+          "title": "Connect display and start button to system controller",
+          "partIds": [
+            "tft_display_43",
+            "start_button",
+            "mcu_s3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bringup",
+      "subSteps": [
+        {
+          "id": "bringup_1",
+          "title": "Verify power rail voltages (3.3V, 5V, 9V)",
+          "partIds": [
+            "buck_boost_regulator",
+            "charging_module"
+          ]
+        },
+        {
+          "id": "bringup_2",
+          "title": "Scan I2C bus for all sensor addresses",
+          "partIds": [
+            "mcu_s3",
+            "rgb_sensor_tcs34725",
+            "adc_ads1115",
+            "tft_display_43"
+          ]
+        },
+        {
+          "id": "bringup_3",
+          "title": "Test motor movement and limit switch logic",
+          "partIds": [
+            "h_bridge_l298n_mini",
+            "limit_switch_home",
+            "limit_switch_end"
+          ]
+        },
+        {
+          "id": "bringup_4",
+          "title": "Calibrate RGB sensors using white standard",
+          "partIds": [
+            "rgb_sensor_tcs34725",
+            "white_cal_standard",
+            "white_led_array"
+          ]
+        },
+        {
+          "id": "bringup_5",
+          "title": "Validate weight sensor and printer communication",
+          "partIds": [
+            "load_cell",
+            "thermal_printer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assemble",
+      "subSteps": [
+        {
+          "id": "assemble_1",
+          "title": "Mount N20 motor and belt drive system to chassis",
+          "partIds": [
+            "mount_n20_motor",
+            "dc_motor_n20_encoder",
+            "pulley_gt2",
+            "timing_belt_gt2"
+          ]
+        },
+        {
+          "id": "assemble_2",
+          "title": "Assemble optical chamber with LEDs and sensors",
+          "partIds": [
+            "optical_chamber_top",
+            "white_led_array_mount",
+            "uvc_sterilizer_mount",
+            "optical_diffuser"
+          ]
+        },
+        {
+          "id": "assemble_3",
+          "title": "Install strip tray and calibration target",
+          "partIds": [
+            "single_strip_tray",
+            "white_cal_standard",
+            "acrylic_flattening_guard"
+          ]
+        },
+        {
+          "id": "assemble_4",
+          "title": "Secure MCU tray and printer to housing",
+          "partIds": [
+            "mount_mcu",
+            "printer_mount",
+            "mcu_s3",
+            "thermal_printer"
+          ]
+        },
+        {
+          "id": "assemble_5",
+          "title": "Install display and final enclosure shell",
+          "partIds": [
+            "tft_display_43",
+            "injection_molded_enclosure",
+            "uvc_shield"
+          ]
+        },
+        {
+          "id": "assemble_6",
+          "title": "Final system test and liner placement",
+          "partIds": [
+            "disposable_liner",
+            "start_button"
+          ]
+        }
+      ]
+    }
+  ],
+  "projectDescription": "Automating reagent strip urinalysis, this device uses an ESP32-S3 and dual RGB sensors to perform colorimetric diagnostics within a light-shielded optical chamber. It features a motorized DC-driven tray, integrated UV-C sterilization, environmental compensation, and a thermal printer for immediate patient reporting.",
+  "instructionPreamble": {
+    "tools": [
+      "Soldering iron with fine tip",
+      "M3 and M2.5 hex keys",
+      "Heat-set insert installation tool (soldering iron tip)",
+      "Wire strippers and crimpers",
+      "3D printer (PLA and PETG capable)",
+      "Multimeter",
+      "Precision screwdriver set",
+      "Acrylic glue or adhesive gaskets"
+    ],
+    "assumptions": [
+      "Access to a 3D printer for manufacturing structural components",
+      "Familiarity with ESP32-S3 firmware flashing and I2C debugging",
+      "Basic soldering skills for small-pitch modules",
+      "All 3D prints are cleaned and deburred prior to assembly"
+    ]
+  },
+  "electricalConnections": [
+    {
+      "type": "power",
+      "label": "Battery Power",
+      "source": "lipo_battery",
+      "target": "charging_module",
+      "current": "1A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Regulator Input",
+      "source": "charging_module",
+      "target": "buck_boost_regulator",
+      "current": "2A",
+      "voltage": "3.7V"
+    },
+    {
+      "type": "power",
+      "label": "Illumination",
+      "source": "buck_boost_regulator",
+      "target": "white_led_array",
+      "current": "100mA",
+      "voltage": "5V"
+    },
+    {
+      "type": "power",
+      "label": "UV Power",
+      "source": "buck_boost_regulator",
+      "target": "uvc_sterilizer",
+      "current": "500mA",
+      "voltage": "5V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "limit_switch_home",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "COM",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "limit_switch_end",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "COM",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "temp_humidity_sensor",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VIN",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "ambient_light_sensor",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "adc_ads1115",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VDD",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "adc_ads1115",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "high_cri_led",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "ANODE",
+      "voltage": "5V (PWM via MOSFET recommended)"
+    },
+    {
+      "source": "led_driver_mosfet",
+      "target": "high_cri_led",
+      "type": "power",
+      "sourcePin": "DRAIN",
+      "targetPin": "CATHODE"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "led_driver_mosfet",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "SOURCE"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "mcu_s3",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "5V",
+      "voltage": "5V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "rgb_sensor_tcs34725",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VIN",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "rgb_sensor_tcs34725",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "rgb_sensor_tcs34725",
+      "type": "data",
+      "sourcePin": "GPIO1",
+      "targetPin": "SDA",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "rgb_sensor_tcs34725",
+      "type": "data",
+      "sourcePin": "GPIO2",
+      "targetPin": "SCL",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "rgb_sensor_2",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VIN",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "rgb_sensor_2",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "rgb_sensor_2",
+      "type": "data",
+      "sourcePin": "GPIO1",
+      "targetPin": "SDA",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "rgb_sensor_2",
+      "type": "data",
+      "sourcePin": "GPIO2",
+      "targetPin": "SCL",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "start_button",
+      "type": "data",
+      "sourcePin": "GPIO3",
+      "targetPin": "1",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "start_button",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "2"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "thermal_printer",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VH",
+      "voltage": "9V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "thermal_printer",
+      "type": "data",
+      "sourcePin": "GPIO17",
+      "targetPin": "RXD",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "load_cell",
+      "type": "data",
+      "sourcePin": "GPIO19",
+      "targetPin": "DT",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "load_cell",
+      "type": "data",
+      "sourcePin": "GPIO20",
+      "targetPin": "SCK",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "tft_display_43",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "5V",
+      "voltage": "5V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "tft_display_43",
+      "type": "data",
+      "sourcePin": "GPIO1",
+      "targetPin": "SDA",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "tft_display_43",
+      "type": "data",
+      "sourcePin": "GPIO2",
+      "targetPin": "SCL",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "h_bridge_l298n_mini",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC",
+      "voltage": "5V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "h_bridge_l298n_mini",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    },
+    {
+      "source": "h_bridge_l298n_mini",
+      "target": "dc_motor_n20_encoder",
+      "type": "power",
+      "sourcePin": "OUT1",
+      "targetPin": "M1"
+    },
+    {
+      "source": "h_bridge_l298n_mini",
+      "target": "dc_motor_n20_encoder",
+      "type": "power",
+      "sourcePin": "OUT2",
+      "targetPin": "M2"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "h_bridge_l298n_mini",
+      "type": "data",
+      "sourcePin": "GPIO4",
+      "targetPin": "IN1",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "h_bridge_l298n_mini",
+      "type": "data",
+      "sourcePin": "GPIO5",
+      "targetPin": "IN2",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "dc_motor_n20_encoder",
+      "type": "data",
+      "sourcePin": "GPIO6",
+      "targetPin": "A",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "mcu_s3",
+      "target": "dc_motor_n20_encoder",
+      "type": "data",
+      "sourcePin": "GPIO7",
+      "targetPin": "B",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "dc_motor_n20_encoder",
+      "type": "power",
+      "sourcePin": "VOUT",
+      "targetPin": "VCC",
+      "voltage": "3.3V"
+    },
+    {
+      "source": "buck_boost_regulator",
+      "target": "dc_motor_n20_encoder",
+      "type": "power",
+      "sourcePin": "GND",
+      "targetPin": "GND"
+    }
+  ],
+  "mechanicalConnections": [
+    {
+      "label": "Snap-fit / M3 screws",
+      "source": "white_led_array_mount",
+      "target": "optical_chamber_top"
+    },
+    {
+      "label": "Press-fit slot",
+      "source": "optical_diffuser",
+      "target": "optical_chamber_top"
+    },
+    {
+      "label": "M3 screws",
+      "source": "uvc_sterilizer_mount",
+      "target": "optical_chamber_top"
+    },
+    {
+      "label": "Mechanical interlock / Screws",
+      "source": "uvc_shield",
+      "target": "optical_chamber_top"
+    },
+    {
+      "label": "M3 screws",
+      "source": "ambient_light_sensor_mount",
+      "target": "optical_chamber_top"
+    },
+    {
+      "label": "Thermal press-fit",
+      "source": "heat_set_inserts",
+      "target": "optical_chamber_top"
+    },
+    {
+      "label": "mount",
+      "source": "mount_limit_home",
+      "target": "limit_switch_home"
+    },
+    {
+      "label": "mount",
+      "source": "mount_limit_end",
+      "target": "limit_switch_end"
+    },
+    {
+      "label": "mount",
+      "source": "temp_humidity_sensor_mount",
+      "target": "temp_humidity_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "ambient_light_sensor_mount",
+      "target": "ambient_light_sensor"
+    },
+    {
+      "label": "mount",
+      "source": "white_led_array_mount",
+      "target": "white_led_array"
+    },
+    {
+      "label": "mount",
+      "source": "uvc_sterilizer_mount",
+      "target": "uvc_sterilizer"
+    },
+    {
+      "source": "mount_tcs34725",
+      "target": "optical_chamber_top",
+      "label": "M2.5 screws"
+    },
+    {
+      "source": "mount_tcs34725",
+      "target": "rgb_sensor_tcs34725",
+      "label": "Snap-fit"
+    },
+    {
+      "source": "rgb_sensor_2",
+      "target": "mount_tcs34725",
+      "label": "M2.5 screws"
+    },
+    {
+      "source": "timing_belt_gt2",
+      "target": "pulley_gt2",
+      "label": "interlock"
+    },
+    {
+      "source": "adc_ads1115",
+      "target": "mount_mcu",
+      "label": "M2.5 screw"
+    },
+    {
+      "source": "high_cri_led",
+      "target": "white_led_array_mount",
+      "label": "Press fit"
+    },
+    {
+      "source": "optical_shroud",
+      "target": "optical_chamber_top",
+      "label": "Adhesive / Snap-fit"
+    },
+    {
+      "source": "single_strip_tray",
+      "target": "shortened_chassis_base",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "injection_molded_enclosure",
+      "label": "Snap-fit clips"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "mount_mcu",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "belt_tensioner_mount",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "mount_limit_home",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "mount_limit_end",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "optical_chamber_top",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "temp_humidity_sensor_mount",
+      "label": "M3 screws"
+    },
+    {
+      "source": "shortened_chassis_base",
+      "target": "start_button",
+      "label": "Panel mount nut"
+    },
+    {
+      "source": "disposable_liner",
+      "target": "single_strip_tray",
+      "label": "place-in"
+    },
+    {
+      "source": "acrylic_flattening_guard",
+      "target": "single_strip_tray",
+      "label": "M2 screw standoffs"
+    },
+    {
+      "source": "white_cal_standard",
+      "target": "single_strip_tray",
+      "label": "recessed adhesive mount"
+    },
+    {
+      "source": "thermal_printer",
+      "target": "printer_mount",
+      "label": "M2.5 screws"
+    },
+    {
+      "source": "printer_mount",
+      "target": "injection_molded_enclosure",
+      "label": "M3 screws"
+    },
+    {
+      "source": "load_cell",
+      "target": "shortened_chassis_base",
+      "label": "M3 bolts"
+    },
+    {
+      "source": "load_cell_base",
+      "target": "load_cell",
+      "label": "M4 center bolt"
+    },
+    {
+      "source": "tft_display_43",
+      "target": "injection_molded_enclosure",
+      "label": "Adhesive gasket"
+    },
+    {
+      "source": "mount_n20_motor",
+      "target": "shortened_chassis_base",
+      "label": "M3 screws"
+    },
+    {
+      "source": "dc_motor_n20_encoder",
+      "target": "mount_n20_motor",
+      "label": "M2 screws"
+    },
+    {
+      "source": "h_bridge_l298n_mini",
+      "target": "shortened_chassis_base",
+      "label": "M2 standoffs"
+    }
+  ],
+  "projectId": "e4de8950-c258-4d27-bdf6-8fc109856c7c"
+}

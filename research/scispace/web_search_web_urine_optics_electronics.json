@@ -1,0 +1,42 @@
+{
+  "type": "web_search_results",
+  "tool": "firecrawl",
+  "query": "urine dipstick analyzer optical sensor design reflectance photometry LED photodetector circuit electronics BOM components",
+  "results": [
+    {
+      "title": "Checking your browser - reCAPTCHA",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9688579/",
+      "domain": "pmc.ncbi.nlm.nih.gov",
+      "description": null,
+      "favicon_url": null
+    },
+    {
+      "title": "An Optical POCT Device for Colorimetric Detection of Urine Test Strips Based on Raspberry Pi Imaging",
+      "url": "https://www.mdpi.com/2304-6732/9/10/784",
+      "domain": "www.mdpi.com",
+      "description": "Urine examinations are widely applied in hospitals using urine test strip analyzers or other sophisticated professional instruments. However, such methods are inconvenient health monitoring of patients at home. Herein, we construct an optical device for point-of-care testing (POCT) for urine analysis at home or on the spot. A black box and color calibration curve are established to eliminate the influence of ambient light with an independent internal lighting system included in the device. A Raspberry Pi with a CSI camera is programmed to automatically collect the strip images and identify the HSV values of the image with an image processing algorithm. During this process, these corrected colors are converted to concentration values by preloaded standard curves. Under optimal conditions, the proposed POCT device can quantitatively and automatically detect glucose within 1 min, with linear detection ranging from 2 mM to 60 mM and a detection limit of 1.16 mM. In addition, the device demonstrates satisfactory accuracy and quantitative analysis of ketone bodies, glucose, protein, occult blood, pH, and leukocytes in human urine samples with high-resolution concentrations, achieving results similar to those obtained with hospital instruments. The proposed device is portable and user-friendly, providing convenient colorimetric analysis for urine. Furthermore, the proposed device also has considerable potential for the development of in vitro diagnosis methods through combination with other test strips.",
+      "favicon_url": "https://pub.mdpi-res.com/img/mask-icon-128.svg?c1c7eca266cd7013?1778678334"
+    },
+    {
+      "title": "An LED-based multi-sample absorbance spectrophotometer for chemistry and biochemistry",
+      "url": "https://www.researchgate.net/publication/394899237_An_LED-based_multi-sample_absorbance_spectrophotometer_for_chemistry_and_biochemistry",
+      "domain": "www.researchgate.net",
+      "description": "Download Citation | An LED-based multi-sample absorbance spectrophotometer for chemistry and biochemistry | The instrument described in this article measures the absorbance of visible light (with wavelengths in the range of approximately 400 to 650 nm)... | Find, read and cite all the research you need on ResearchGate",
+      "favicon_url": "https://c5.rgstatic.net/m/42199702882742/images/favicon/favicon-32x32.png"
+    },
+    {
+      "title": "(PDF) An Optical POCT Device for Colorimetric Detection of Urine Test Strips Based on Raspberry Pi Imaging",
+      "url": "https://www.researchgate.net/publication/364709844_An_Optical_POCT_Device_for_Colorimetric_Detection_of_Urine_Test_Strips_Based_on_Raspberry_Pi_Imaging",
+      "domain": "www.researchgate.net",
+      "description": "PDF | Urine examinations are widely applied in hospitals using urine test strip analyzers or other sophisticated professional instruments. However, such... | Find, read and cite all the research you need on ResearchGate",
+      "favicon_url": "https://c5.rgstatic.net/m/42199702882742/images/favicon/favicon-32x32.png"
+    },
+    {
+      "title": "Client Challenge",
+      "url": "https://www.scribd.com/document/526388494/Bio-Instrumentation-John-G-Webster",
+      "domain": "www.scribd.com",
+      "description": null,
+      "favicon_url": null
+    }
+  ]
+}

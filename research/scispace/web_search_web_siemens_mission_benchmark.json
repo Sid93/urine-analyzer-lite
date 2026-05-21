@@ -1,0 +1,42 @@
+{
+  "type": "web_search_results",
+  "tool": "firecrawl",
+  "query": "Siemens Clinitek Mission urine analyzer specifications technology dipstick parameters optical design",
+  "results": [
+    {
+      "title": "Urine analyzer - All medical device manufacturers",
+      "url": "https://www.medicalexpo.com/medical-manufacturer/urine-analyzer-402.html",
+      "domain": "www.medicalexpo.com",
+      "description": null,
+      "favicon_url": "https://img.medicalexpo.com/favicons/favicon.ico"
+    },
+    {
+      "title": "Robust dipstick urinalysis using a low-cost, micro-volume slipping manifold and mobile phone platform | Request PDF",
+      "url": "https://www.researchgate.net/publication/302970048_Robust_dipstick_urinalysis_using_a_low-cost_micro-volume_slipping_manifold_and_mobile_phone_platform",
+      "domain": "www.researchgate.net",
+      "description": "Request PDF | Robust dipstick urinalysis using a low-cost, micro-volume slipping manifold and mobile phone platform | We introduce a novel manifold and companion software for dipstick urinalysis that eliminate many of the aspects that are traditionally plagued by... | Find, read and cite all the research you need on ResearchGate",
+      "favicon_url": "https://c5.rgstatic.net/m/42199702882742/images/favicon/favicon-32x32.png"
+    },
+    {
+      "title": "Safety Testing | Medpace Central Labs",
+      "url": "https://www.medpace.com/labs/central-lab/safety-testing/",
+      "domain": "www.medpace.com",
+      "description": "Medpace central laboratories accesses safety, tolerability, and efficacy of new drugs. Learn more about our global capabilities for clinical trials.",
+      "favicon_url": "https://www.medpace.com/wp-content/uploads/2023/01/medpace-favicon-150x150.png"
+    },
+    {
+      "title": "WO2018194525A1 - Biochemical analyser based on a machine learning algorithm using test strips and a smartdevice \n        - Google Patents",
+      "url": "https://patents.google.com/patent/WO2018194525A1/en",
+      "domain": "patents.google.com",
+      "description": "\n     The present invention relates to a biochemical analyzing method for quantifying metabolites in a biological sample. The method is based on generating and learning the appearance of a test strip (dipstick) under various conditions to estimate the value/label for an unknown sample image. The method consists of two parts: a training part and a testing part. In the training part, metabolite quantities of a test strip are measured by a biochemistry analyzer; a set of images of the same test strip are captured by a device simulating various ambient lighting conditions; a machine learning model is trained using the images of the test strip and its corresponding metabolite quantities and the learning model is transferred to a smart device. In the testing part, images of a test strip to be analyzed are captured by the smart device and the images are processed using the learning model determined in the training part. \n   \n   ",
+      "favicon_url": null
+    },
+    {
+      "title": null,
+      "url": "https://www.openpublichealthjournal.com/VOLUME/12/PAGE/342/FULLTEXT/",
+      "domain": "www.openpublichealthjournal.com",
+      "description": "Assessing the Reliability of Commercially Available Point of Care in Various Clinical Fields",
+      "favicon_url": "https://www.openpublichealthjournal.com/images/favicon.ico"
+    }
+  ]
+}

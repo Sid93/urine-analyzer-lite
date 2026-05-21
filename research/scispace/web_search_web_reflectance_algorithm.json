@@ -1,0 +1,35 @@
+{
+  "type": "web_search_results",
+  "tool": "firecrawl",
+  "query": "urine dipstick reflectance photometry algorithm Kubelka-Munk color analysis calibration microcontroller firmware",
+  "results": [
+    {
+      "title": "Checking your browser - reCAPTCHA",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11788702/",
+      "domain": "pmc.ncbi.nlm.nih.gov",
+      "description": null,
+      "favicon_url": null
+    },
+    {
+      "title": "Checking your browser - reCAPTCHA",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9320386/",
+      "domain": "pmc.ncbi.nlm.nih.gov",
+      "description": null,
+      "favicon_url": null
+    },
+    {
+      "title": "Sensors and Microsystems: Proceedings of AISEM 2022\n 3031257057, 9783031257056 - DOKUMEN.PUB",
+      "url": "https://dokumen.pub/sensors-and-microsystems-proceedings-of-aisem-2022-3031257057-9783031257056.html",
+      "domain": "dokumen.pub",
+      "description": "This book showcases the state of the art in the field of sensors and microsystems, revealing the impressive potential of...",
+      "favicon_url": "https://dokumen.pub/dokumenpub/assets/img/android-icon-192x192.png"
+    },
+    {
+      "title": null,
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/vocab.pubmed.txt",
+      "domain": "archive.ics.uci.edu",
+      "description": null,
+      "favicon_url": null
+    }
+  ]
+}

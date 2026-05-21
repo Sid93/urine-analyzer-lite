@@ -1,0 +1,42 @@
+{
+  "type": "web_search_results",
+  "tool": "firecrawl",
+  "query": "urine dipstick strip 2 parameter 10 parameter chemistry reagent pad composition glucose protein pH specific gravity",
+  "results": [
+    {
+      "title": "10 Parameter Urinalysis Test at Home",
+      "url": "https://www.diagnoxhealth.com/blog/10-parameter-urinalysis-test-at-home",
+      "domain": "www.diagnoxhealth.com",
+      "description": "Discover the benefits of at-home urinalysis tests for monitoring your health. Learn how they check for disorders and support your overall well-being.",
+      "favicon_url": "https://cdn.prod.website-files.com/62719646d2b2c91e963d39a9/63aa54a2e93ff8d22c897f11_DGX_Favicon.png"
+    },
+    {
+      "title": "Urine test strip - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Urine_test_strip",
+      "domain": "en.wikipedia.org",
+      "description": "A urine test strip or dipstick is a basic diagnostic tool used to determine pathological changes in a patient's urine in standard urinalysis. A standard urine test strip may comprise up to 10 different chemical pads or reagents which react when immersed in, and then removed from, a urine sample. The test can often be read in as little as 60 to 120 seconds after dipping, although certain tests require longer. Routine testing of the urine with multiparameter strips is the first step in the diagnosis of a wide range of diseases. The analysis includes testing for the presence of proteins, glucose, ketones, haemoglobin, bilirubin, urobilinogen, acetone, nitrite and leucocytes as well as testing of pH and specific gravity or to test for infection by different pathogens. The test strips consist of a ribbon made of plastic or paper of about 5 millimetre wide. Plastic strips have pads impregnated with chemicals that react with the compounds present in urine producing a characteristic colour. For the paper strips the reactants are absorbed directly onto the paper. Paper strips are often specific to a single reaction, while the strips with pads allow several determinations simultaneously. There are strips which serve different purposes, such as qualitative strips that only determine if the sample is positive or negative, or there are semi-quantitative ones that in addition to providing a positive or negative reaction also provide an estimation of a quantitative result, in the latter the colour reactions are approximately proportional to the concentration of the substance being tested for in the sample. The reading of the results is carried out by comparing the pad colours with a colour scale provided by the manufacturer, no additional equipment is needed. This type of analysis is very common in the control and monitoring of diabetic patients. The time taken for the appearance of the test results on the strip can vary from a few minutes after the test to 30 minutes after immersion of the strip in the urine. Semi-quantitative values are usually reported as: trace, 1+, 2+, 3+ and 4+; although tests can also be estimated as milligrams per decilitre. Automated readers of test strips also provide results using units from the International System of Units.",
+      "favicon_url": null
+    },
+    {
+      "title": "Urinalysis - StatPearls - NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK557685/",
+      "domain": "www.ncbi.nlm.nih.gov",
+      "description": "Around 6,000 years ago, laboratory medicine began with the analysis of human urine as uroscopy, which later became termed urinalysis. The word \"uroscopy\" derives from two Greek words: \"ouron,\" which means urine and \"skopeoa,\" which means to 'behold, contemplate, examine, inspect'. Ancient physicians spoke of urine as a window to the body's inner workings and reflected different diseases. For instance, Hindu civilizations recognized a \"sweetness\" in certain people's urine, which attracted black ants.[1]\u00a0Hippocrates (460\u2013355 BC) hypothesized that urine was a filtrate of the humors in the body, originating from the blood filtered through the kidneys. In Aphorisms, he described bubbles on the surface of fresh urine as a sign of long-term kidney disease and associated urinary sediment with fever.[2]\u00a0Galen used the phrase \"diarrhea of the urine\" to describe excessive urination.[3]\u00a0Theophilus Protospatharius, a seventh-century physician who wrote the first manuscript focused exclusively on urine called \"De Urinis\", determined heating urine would precipitate proteins, documenting proteinuria as a disease state.[4]\u00a0Ismail of Jurjani, an eleventh-century physician, acknowledged food and aging altered urine composition and was the first to propose 24 hours urine collection.",
+      "favicon_url": "https://www.ncbi.nlm.nih.gov/favicon.ico"
+    },
+    {
+      "title": "10 SG Urine Test Strips | Health Monitoring & Analysis \u2014 Mountainside Medical",
+      "url": "https://www.mountainside-medical.com/products/rapid-response-10-parameter-urinalysis-reagent-test-strips",
+      "domain": "www.mountainside-medical.com",
+      "description": "Ensure optimal health with 10 SG Urine Reagent Test Strips. Easily test for glucose, protein, ketones, and more with accurate results.",
+      "favicon_url": "https://www.mountainside-medical.com/cdn/shop/files/Mountainside_Medical_Equipment_0c3f5525-e264-46d9-a630-f7720068f0ac_32x32.png?v=1681135482"
+    },
+    {
+      "title": "Home Urinalysis Test Strip Color Guide and Explanations | DW",
+      "url": "https://www.disabled-world.com/calculators-charts/urinalysis.php",
+      "domain": "www.disabled-world.com",
+      "description": "Urinalysis color chart with explanations, information, and instructions on how to interpret the color variations on home urine test strips.",
+      "favicon_url": "https://www.disabled-world.com/favicon.svg"
+    }
+  ]
+}

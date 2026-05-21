@@ -1,0 +1,320 @@
+[
+  {
+    "type": "power",
+    "label": "Battery Power",
+    "source": "lipo_battery",
+    "target": "charging_module",
+    "current": "1A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Regulator Input",
+    "source": "charging_module",
+    "target": "buck_boost_regulator",
+    "current": "2A",
+    "voltage": "3.7V"
+  },
+  {
+    "type": "power",
+    "label": "Illumination",
+    "source": "buck_boost_regulator",
+    "target": "white_led_array",
+    "current": "100mA",
+    "voltage": "5V"
+  },
+  {
+    "type": "power",
+    "label": "UV Power",
+    "source": "buck_boost_regulator",
+    "target": "uvc_sterilizer",
+    "current": "500mA",
+    "voltage": "5V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "limit_switch_home",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "COM",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "limit_switch_end",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "COM",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "temp_humidity_sensor",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VIN",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "ambient_light_sensor",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "adc_ads1115",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VDD",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "adc_ads1115",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "high_cri_led",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "ANODE",
+    "voltage": "5V (PWM via MOSFET recommended)"
+  },
+  {
+    "source": "led_driver_mosfet",
+    "target": "high_cri_led",
+    "type": "power",
+    "sourcePin": "DRAIN",
+    "targetPin": "CATHODE"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "led_driver_mosfet",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "SOURCE"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "mcu_s3",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "5V",
+    "voltage": "5V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "rgb_sensor_tcs34725",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VIN",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "rgb_sensor_tcs34725",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "rgb_sensor_tcs34725",
+    "type": "data",
+    "sourcePin": "GPIO1",
+    "targetPin": "SDA",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "rgb_sensor_tcs34725",
+    "type": "data",
+    "sourcePin": "GPIO2",
+    "targetPin": "SCL",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "rgb_sensor_2",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VIN",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "rgb_sensor_2",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "rgb_sensor_2",
+    "type": "data",
+    "sourcePin": "GPIO1",
+    "targetPin": "SDA",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "rgb_sensor_2",
+    "type": "data",
+    "sourcePin": "GPIO2",
+    "targetPin": "SCL",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "start_button",
+    "type": "data",
+    "sourcePin": "GPIO3",
+    "targetPin": "1",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "start_button",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "2"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "thermal_printer",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VH",
+    "voltage": "9V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "thermal_printer",
+    "type": "data",
+    "sourcePin": "GPIO17",
+    "targetPin": "RXD",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "load_cell",
+    "type": "data",
+    "sourcePin": "GPIO19",
+    "targetPin": "DT",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "load_cell",
+    "type": "data",
+    "sourcePin": "GPIO20",
+    "targetPin": "SCK",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "tft_display_43",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "5V",
+    "voltage": "5V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "tft_display_43",
+    "type": "data",
+    "sourcePin": "GPIO1",
+    "targetPin": "SDA",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "tft_display_43",
+    "type": "data",
+    "sourcePin": "GPIO2",
+    "targetPin": "SCL",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "h_bridge_l298n_mini",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC",
+    "voltage": "5V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "h_bridge_l298n_mini",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  },
+  {
+    "source": "h_bridge_l298n_mini",
+    "target": "dc_motor_n20_encoder",
+    "type": "power",
+    "sourcePin": "OUT1",
+    "targetPin": "M1"
+  },
+  {
+    "source": "h_bridge_l298n_mini",
+    "target": "dc_motor_n20_encoder",
+    "type": "power",
+    "sourcePin": "OUT2",
+    "targetPin": "M2"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "h_bridge_l298n_mini",
+    "type": "data",
+    "sourcePin": "GPIO4",
+    "targetPin": "IN1",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "h_bridge_l298n_mini",
+    "type": "data",
+    "sourcePin": "GPIO5",
+    "targetPin": "IN2",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "dc_motor_n20_encoder",
+    "type": "data",
+    "sourcePin": "GPIO6",
+    "targetPin": "A",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "mcu_s3",
+    "target": "dc_motor_n20_encoder",
+    "type": "data",
+    "sourcePin": "GPIO7",
+    "targetPin": "B",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "dc_motor_n20_encoder",
+    "type": "power",
+    "sourcePin": "VOUT",
+    "targetPin": "VCC",
+    "voltage": "3.3V"
+  },
+  {
+    "source": "buck_boost_regulator",
+    "target": "dc_motor_n20_encoder",
+    "type": "power",
+    "sourcePin": "GND",
+    "targetPin": "GND"
+  }
+]
