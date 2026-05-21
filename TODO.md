@@ -15,8 +15,9 @@
 - 🔲 **Fix config.h: SCL≠GPIO22 (invalid on S3), printer RX off GPIO19 (USB), UV-C off GPIO3 (strap)**
 - 🔲 **Add TCA9548A I2C mux + 3.3V regulator to BOM (two TCS34725 clash at 0x29; no 3V3 rail)**
 - 🔲 **Decide display: ESP32-S3 cannot drive MIPI-DSI — pick SPI TFT / RGB / OLED / new host**
-- 🔲 Rebuild schematic as a REAL netlisted KiCad schematic (symbols + footprints)
-- ⛔ ~~Generate KiCad schematic~~ (existing file is a mock-up, not a netlist — superseded)
+- ✅ Netlist generated from master pin map → `hardware/netlist/` (.net + NETLIST.md)
+- 🔲 Engineer: import .net to Pcbnew (or draw schematic in Eeschema) + assign real footprints
+- ⛔ ~~Generate KiCad schematic~~ (old `.kicad_sch` is a mock-up, not a netlist — superseded)
 - 🔲 Open schematic in KiCad EDA and visually verify all nets
 - 🔲 Assign real KiCad symbol library parts to each component
 - 🔲 Add ERC (Electrical Rules Check) violations resolution
