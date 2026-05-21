@@ -6,7 +6,17 @@
 
 ## Hardware — PCB / Schematic
 
-- ✅ Generate KiCad schematic (`hardware/schematic/urine_analyzer_lite.kicad_sch`)
+> ⚠️ STAGE 4 GATE: see `hardware/ENGINEERING_REVIEW.md` + `hardware/POWER_BUDGET.md`.
+> The existing `.kicad_sch` is a graphical mock-up with NO netlist. config.h / Blueprint / BOM
+> disagree on motor driver, I2C pins, motor/HX711/printer pins, display, and the 9V rail.
+> Resolve all 🔴 items + sign off the master pin map before any layout.
+
+- 🔲 **Engineer: resolve 🔴 items + approve master pin map (ENGINEERING_REVIEW §3)**
+- 🔲 **Fix config.h: SCL≠GPIO22 (invalid on S3), printer RX off GPIO19 (USB), UV-C off GPIO3 (strap)**
+- 🔲 **Add TCA9548A I2C mux + 3.3V regulator to BOM (two TCS34725 clash at 0x29; no 3V3 rail)**
+- 🔲 **Decide display: ESP32-S3 cannot drive MIPI-DSI — pick SPI TFT / RGB / OLED / new host**
+- 🔲 Rebuild schematic as a REAL netlisted KiCad schematic (symbols + footprints)
+- ⛔ ~~Generate KiCad schematic~~ (existing file is a mock-up, not a netlist — superseded)
 - 🔲 Open schematic in KiCad EDA and visually verify all nets
 - 🔲 Assign real KiCad symbol library parts to each component
 - 🔲 Add ERC (Electrical Rules Check) violations resolution
