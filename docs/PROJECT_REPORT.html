@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Urine Analyzer Lite — Project Report</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1a1a1a;
+         font-size: 10.5pt; line-height: 1.5; }
+  h1 { font-size: 24pt; margin: 0 0 2pt; color: #0b3d63; }
+  h2 { font-size: 14pt; margin: 22pt 0 6pt; color: #0b3d63; border-bottom: 2px solid #0b3d63;
+       padding-bottom: 3pt; }
+  h3 { font-size: 11.5pt; margin: 14pt 0 4pt; color: #145a8a; }
+  .sub { color: #555; font-size: 10pt; margin: 0 0 2pt; }
+  .meta { color: #777; font-size: 9pt; margin-bottom: 6pt; }
+  table { border-collapse: collapse; width: 100%; margin: 6pt 0; font-size: 9.3pt; }
+  th, td { border: 1px solid #c8d2da; padding: 4pt 6pt; text-align: left; vertical-align: top; }
+  th { background: #eef3f7; color: #0b3d63; }
+  code { background: #f1f3f5; padding: 0 3px; border-radius: 3px; font-size: 9pt; }
+  .ok { color: #1a7f37; font-weight: 600; }
+  .warn { color: #b35900; font-weight: 600; }
+  .crit { color: #b3261e; font-weight: 600; }
+  ul, ol { margin: 4pt 0 8pt; padding-left: 18pt; }
+  li { margin: 2pt 0; }
+  .box { border: 1px solid #c8d2da; border-left: 4px solid #0b3d63; background: #f7fafc;
+         padding: 8pt 12pt; margin: 8pt 0; border-radius: 4px; }
+  .pill { display:inline-block; background:#0b3d63; color:#fff; border-radius: 10px;
+          padding: 1pt 8pt; font-size: 8.5pt; }
+  img { max-width: 100%; border: 1px solid #ccc; }
+  .footer { color:#999; font-size: 8pt; margin-top: 16pt; border-top: 1px solid #ddd; padding-top:4pt;}
+  .twocol { column-count: 2; column-gap: 18pt; }
+</style>
+</head>
+<body>
+
+<h1>Urine Analyzer Lite</h1>
+<p class="sub"><b>Project Status &amp; Engineering Report</b> — Levram Lifesciences</p>
+<p class="meta">Device: automated 10-pad urine reagent-strip reader (reflectance photometry) ·
+Regulatory pathway: India / CDSCO · Repo: github.com/Sid93/urine-analyzer-lite · Report date: 2026-05-21</p>
+
+<div class="box">
+<b>Executive summary.</b> The project is a benchtop/point-of-care urine dipstick analyzer
+("Design A": ESP32-S3 + dual TCS34725 reflectance optics, motorized strip transport, thermal
+printout, SPI touch display). A complete firmware draft, India-sourced BOM, and a Blueprint
+mechanical concept already existed. Since then we have <b>backfilled the regulatory foundation
+(Stage 0)</b>, <b>integrated the research and design inputs (Stages 1 &amp; 3)</b>, and
+<b>completed the electrical engineering groundwork (Stage 4)</b> — reconciling three conflicting
+design sources into one verified pin map, fixing real hardware bugs, locking the open design
+decisions, and generating an <b>ERC-clean schematic</b> and a <b>net-assigned starting PCB</b>,
+both validated with KiCad 10. The design is now coherent and ready for an electronics engineer to
+verify, route, and prototype.
+</div>
+
+<h2>1. The device (Design A)</h2>
+<table>
+<tr><th>Attribute</th><th>Specification</th></tr>
+<tr><td>Function</td><td>Semi-quantitative reading of the standard 10-pad urine reagent strip (leukocytes, nitrite, urobilinogen, protein, pH, blood, specific gravity, ketones, bilirubin, glucose)</td></tr>
+<tr><td>Principle</td><td>Diffuse reflectance photometry; dual TCS34725 RGB sensors + high-CRI LED; HSV classification</td></tr>
+<tr><td>MCU</td><td>ESP32-S3 (USB-CDC), firmware state machine + sensor drivers complete (first draft)</td></tr>
+<tr><td>Mechanics</td><td>GA12-N20 motor strip transport w/ encoder + limit switches; 3D-printed chassis/optical chamber</td></tr>
+<tr><td>Display</td><td>3.5&quot; SPI TFT (ILI9488) + XPT2046 touch <span class="pill">decided</span></td></tr>
+<tr><td>Output / extras</td><td>CSN-A2 58mm thermal printer; 275nm UV-C tray sterilization; LiPo + USB-C charging</td></tr>
+<tr><td>Setting / class</td><td>Clinic / point-of-care; CDSCO best-guess <b>Class B</b> (to confirm)</td></tr>
+<tr><td>Cost target</td><td>&lt;$250/unit at 50-unit volume (prototype ~₹387/unit, India-sourced)</td></tr>
+</table>
+
+<h2>2. Workflow &amp; where we are</h2>
+<p>The project follows a 12-stage medical-device workflow with two hard gates: <b>Stage 0 gates
+everything</b>; <b>design freeze (Stage 5) gates all validation</b>.</p>
+<table>
+<tr><th>Stage</th><th>Status</th></tr>
+<tr><td>0 — Foundation (TPP, class, standards, risk, FTO)</td><td class="ok">DONE (backfilled)</td></tr>
+<tr><td>1 — Literature &amp; report (SciSpace)</td><td class="ok">DONE (integrated)</td></tr>
+<tr><td>2 — Interactive explainer site</td><td>not started (optional)</td></tr>
+<tr><td>3 — Device design iterations (Blueprint)</td><td class="ok">DONE (integrated)</td></tr>
+<tr><td>4 — Engineering files (schematic, netlist, PCB)</td><td class="ok">DONE (this report) — pending engineer sign-off</td></tr>
+<tr><td>5 — Prototype &amp; bench verify → design freeze</td><td class="warn">NEXT</td></tr>
+<tr><td>6–12 — Analytical validation → regulatory → mfg → post-market</td><td>future</td></tr>
+</table>
+
+<h2>3. Stage 0 — Regulatory foundation (<code>regulatory/</code>)</h2>
+<ul>
+<li><b>Target Product Profile</b> — intended use, analytes, performance targets, open issues.</li>
+<li><b>CDSCO classification &amp; pathway</b> — best-guess <b>Class B</b>; MD-12/13 test licence → MD-5 manufacturing licence route. <span class="warn">Confirm via regulatory consultant pre-submission before generating validation data.</span></li>
+<li><b>Standards matrix</b> — applies: ISO 13485, ISO 14971, IEC 61010-1/-2-101, IEC 61326-2-6, IEC 62304, IEC 62366-1, ISO 18113, CLSI EP05/06/07/17, IEC 62471 (UV-C). Dropped: ISO 10993, IEC 60601, ISO 15197.</li>
+<li><b>ISO 14971 risk file</b> — 12-hazard FMEA seed; UV-C exposure (H1) is the highest-novelty hazard.</li>
+<li><b>Freedom-to-operate</b> — preliminary optics-patent search. <b>Finding:</b> a white-LED + RGB-sensor reflectance head is textbook prior art, so "optics" is not yet a defensible differentiator; a specific novel optical scheme is needed to be patentable.</li>
+</ul>
+
+<h2>4. Stage 4 — Engineering (the core of recent work)</h2>
+<h3>4.1 Source reconciliation</h3>
+<p>The electrical design lived in three places that <b>disagreed</b> (firmware <code>config.h</code>,
+Blueprint netlist, BOM): motor driver (MX1508 vs L298N), I2C pins, motor/HX711/printer GPIOs, display.
+We adopted <code>config.h</code> as the source of truth and produced one master pin map
+(<code>hardware/ENGINEERING_REVIEW.md</code>).</p>
+<h3>4.2 Real hardware bugs found &amp; fixed</h3>
+<table>
+<tr><th>Issue</th><th>Resolution</th></tr>
+<tr><td><span class="crit">Invalid pin</span> — <code>SCL = GPIO22</code> does not exist on ESP32-S3</td><td>Reassigned I2C to GPIO1/2</td></tr>
+<tr><td><span class="crit">USB clash</span> — printer RX on GPIO19 (native USB D+)</td><td>Moved printer UART to GPIO17/18</td></tr>
+<tr><td><span class="crit">Strapping pin</span> — UV-C enable on GPIO3 (boot strap; unsafe for a safety output)</td><td>Moved to GPIO13 + pull-down (off at boot)</td></tr>
+<tr><td><span class="crit">I2C clash</span> — two TCS34725 both at address 0x29</td><td>Added TCA9548A I2C mux (was missing from BOM)</td></tr>
+<tr><td><span class="crit">Unbuildable display</span> — 4.3&quot; MIPI-DSI (ESP32-S3 has no DSI)</td><td>Switched to 3.5&quot; SPI TFT (ILI9488)</td></tr>
+<tr><td><span class="warn">Power</span> — no 3.3V rail; 9V printer rail referenced but only 5V regulator; ~3.9A peak vs 2.5A regulator</td><td>Added AMS1117-3.3; printer at 5V; documented load-sequencing + battery C-rating in POWER_BUDGET.md</td></tr>
+</table>
+<h3>4.3 Decisions locked</h3>
+<ul>
+<li><b>Display:</b> 3.5&quot; SPI TFT + XPT2046 touch.</li>
+<li><b>Canonical design:</b> Design A (reflectance reader). The camera-based KiCad project is a separate, unrelated project.</li>
+<li><b>Motor driver:</b> MX1508. <b>Printer rail:</b> 5V.</li>
+</ul>
+<h3>4.4 Generated &amp; validated artifacts (KiCad 10.0.3)</h3>
+<table>
+<tr><th>Artifact</th><th>Location</th><th>Validation</th></tr>
+<tr><td>Netlist (KiCad-importable + table)</td><td><code>hardware/netlist/</code></td><td>31 components, 39 nets</td></tr>
+<tr><td>Schematic (real symbols for jellybeans; real footprints)</td><td><code>hardware/schematic/</code></td><td class="ok">ERC 0 errors; netlist 39/39 by ref+pad</td></tr>
+<tr><td>Starting PCB (placed + net-assigned)</td><td><code>hardware/pcb/</code></td><td class="ok">Schematic-parity 0; unrouted ratsnest only</td></tr>
+</table>
+<p>All three are generated from a single source-of-truth model (<code>gen_netlist.py</code> +
+<code>footprints.py</code>), so schematic, netlist, and board stay in sync.</p>
+
+<h3>4.5 Starting PCB (top render)</h3>
+<img src="../hardware/pcb/urine_analyzer_lite_render_top.png" alt="PCB top render">
+<p class="meta">31 footprints placed on a grid with nets assigned; intentionally unrouted. Module
+footprints are 2.54mm pin headers pending datasheet pin-order confirmation.</p>
+
+<h2>5. Open decisions &amp; risks</h2>
+<table>
+<tr><th>Item</th><th>Why it matters</th><th>Owner</th></tr>
+<tr><td><b>Proprietary vs commercial strips</b></td><td>Firmware reads standard strips, but stated intent is own strips — a second product (reagent R&amp;D, ISO 23640, separate IVD registration)</td><td>Business</td></tr>
+<tr><td><b>Confirm CDSCO class</b></td><td>Class drives which validation tests are owed; wrong class = repeated studies</td><td>Reg. consultant</td></tr>
+<tr><td><b>Keep or drop UV-C</b></td><td>275nm is a real eye/skin hazard + IEC 62471 burden; highest novelty-vs-cost trade</td><td>Engineering / Risk</td></tr>
+<tr><td><b>Module header pin order</b></td><td>PCB module footprints use netlist order; physical pinouts must be verified vs datasheets before routing</td><td>Electronics engineer</td></tr>
+</table>
+
+<h2>6. Next steps</h2>
+<h3>Immediate — electronics engineer (Stage 4 close-out)</h3>
+<ol>
+<li>Review the schematic + <code>ENGINEERING_REVIEW.md</code> + <code>POWER_BUDGET.md</code>.</li>
+<li><b>Confirm each module's header pin order</b> against datasheets (<code>footprints.py</code>).</li>
+<li>Swap remaining generic module symbols for preferred library/custom symbols if desired; optionally redraw schematic with wires.</li>
+<li>Place parts sensibly, add power planes (GND/+5V/+3V3), route (wide traces for motor/printer/UV-C), add chassis mounting holes.</li>
+<li><b>DRC → 0</b>; export Gerbers + drill + position files; order 5× prototype PCBs (JLCPCB/PCBWay).</li>
+</ol>
+<h3>Then — Stage 5 onward</h3>
+<ul>
+<li><b>Stage 5 Prototype &amp; bench verify:</b> assemble, flash firmware, calibrate (white standard, scale, pad pitch, hue table), validate scan cycle → <b>design freeze</b>.</li>
+<li><b>Stage 6 Analytical validation:</b> LoD, precision, interference, method comparison vs predicate (CLSI EP protocols).</li>
+<li><b>Stage 7 Safety/EMC:</b> IEC 61010, 61326, 62471 (UV-C) at an NABL lab.</li>
+<li><b>Stage 8 Human factors + close risk file (ISO 14971/IEC 62366); cybersecurity if Wi-Fi/BT added.</b></li>
+<li><b>Stage 9 Regulatory (CDSCO):</b> ISO 13485 QMS, test licence → manufacturing licence; clinical performance evaluation if required.</li>
+<li><b>Stages 10–12:</b> design transfer &amp; manufacturing, pre-launch (labeling/IFU, packaging, pricing), post-market surveillance.</li>
+</ul>
+
+<h2>7. Repository map</h2>
+<table>
+<tr><th>Path</th><th>Contents</th></tr>
+<tr><td><code>regulatory/</code></td><td>Stage 0: TPP, CDSCO classification, standards matrix, ISO 14971 risk file, FTO</td></tr>
+<tr><td><code>research/scispace/</code></td><td>Stage 1: literature + manufacturing/commercial report (2P &amp; 10P, India market)</td></tr>
+<tr><td><code>design/blueprint/</code></td><td>Stage 3: Blueprint mechanical/electrical concept export</td></tr>
+<tr><td><code>hardware/ENGINEERING_REVIEW.md</code>, <code>POWER_BUDGET.md</code></td><td>Stage 4: master pin map + power analysis</td></tr>
+<tr><td><code>hardware/footprints.py</code></td><td>Real KiCad footprints + pad map (single source of truth)</td></tr>
+<tr><td><code>hardware/netlist/</code></td><td>Netlist generator, <code>.net</code>, NETLIST.md</td></tr>
+<tr><td><code>hardware/schematic/</code></td><td>Schematic generator, <code>.kicad_sch</code>, PDF, ERC report</td></tr>
+<tr><td><code>hardware/pcb/</code></td><td>PCB generator, <code>.kicad_pcb</code>, project, render, DRC report</td></tr>
+<tr><td><code>firmware/</code>, <code>bom/</code></td><td>ESP32-S3 firmware (first draft), India-sourced BOM</td></tr>
+</table>
+
+<div class="box">
+<b>Disclaimers.</b> Best-guess CDSCO classification and the FTO read are not legal/regulatory
+opinions — engage a CDSCO consultant and (before launch/export) a patent attorney. The schematic
+and PCB are AI-generated first drafts, electrically correct per the model and ERC/parity-validated,
+but symbol/footprint choices, module pin order, physical layout, and routing require a qualified
+electronics engineer's sign-off before fabrication.
+</div>
+
+<p class="footer">Urine Analyzer Lite — generated 2026-05-21 · Levram Lifesciences · github.com/Sid93/urine-analyzer-lite (public)</p>
+</body>
+</html>
