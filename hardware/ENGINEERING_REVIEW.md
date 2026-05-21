@@ -109,8 +109,9 @@ All display + I/O pins above are valid, free ESP32-S3 GPIOs and match `firmware/
 1. Engineer resolves all 🔴 items and approves §3 map.
 2. ✅ Netlist generated from the master pin map → `hardware/netlist/` (`urine_analyzer_lite.net`
    importable into Pcbnew, plus `NETLIST.md`). Footprints are placeholders to confirm in KiCad.
-   Draw/clean the schematic in Eeschema from this and run ERC.
-3. Run **ERC** → 0 errors.
+3. ✅ Schematic generated + **ERC-clean (0 errors)** → `hardware/schematic/urine_analyzer_lite.kicad_sch`
+   (+ PDF, ERC_report.txt). KiCad netlist cross-check matches the model 39/39. Engineer: swap
+   generic symbols for library parts, assign real footprints, optionally redraw with wires.
 4. PCB layout: power planes (GND/3V3/5V), wide traces for motor/printer/UV-C, mounting holes to chassis.
 5. Run **DRC** → 0 errors. Export Gerbers + assembly BOM (JLCPCB/PCBWay).
 6. Order 5× prototypes.

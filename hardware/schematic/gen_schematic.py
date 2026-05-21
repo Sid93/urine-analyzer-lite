@@ -1,431 +1,85 @@
 #!/usr/bin/env python3
-"""
-KiCad schematic generator for Urine Analyzer Lite.
-Components: ESP32-S3, TCS34725 x2, SHT31, BH1750, ADS1115, N20+MX1508,
-            TP4056, LiPo, S13V25F5, HX711, CSN-A2 printer, DSI LCD, UV-C LED.
-Run: python3 gen_schematic.py
-Output: urine_analyzer_lite.kicad_sch
-"""
+"""Generate a connected KiCad schematic from the netlist model in gen_netlist.py.
+Connectivity = a global label (net name) placed exactly on each pin's connection point
+(abs = ox, oy - py). Global labels join by name across the sheet. Pins are 'passive' to
+minimise ERC pin-type noise. Aesthetics are secondary; goal = ERC-clean connectivity."""
+import sys, os, uuid
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "netlist"))
+import gen_netlist as g
 
-import uuid, datetime
+ROOT = str(uuid.uuid4())
+def u(): return str(uuid.uuid4())
 
-def uid(): return str(uuid.uuid4())
+PITCH = 2.54
+BODY_W = 33.02            # 13*2.54, on-grid
+COL_STEP = 96.52         # 38*2.54
+COL_X0 = 50.8            # 20*2.54
+ROW_Y0 = 30.48           # 12*2.54
+COL_H = 558.8            # 220*2.54
+MARGIN = 7.62            # 3*2.54
 
-W = 25.4  # mm to mils factor (not used directly; KiCad 6+ uses mm natively)
+def sym_def(ref, value, pins):
+    n = len(pins)
+    lines = [f'\t\t(symbol "ual:{ref}"',
+             '\t\t\t(exclude_from_sim no)(in_bom yes)(on_board yes)',
+             '\t\t\t(pin_names (offset 0.508))',
+             f'\t\t\t(property "Reference" "{ref[0] if ref[0].isalpha() else "U"}" (at 0 {PITCH*1.5:.2f} 0)(effects (font (size 1.27 1.27))))',
+             f'\t\t\t(property "Value" "{value}" (at 0 {-(n*PITCH):.2f} 0)(effects (font (size 1.27 1.27))))',
+             f'\t\t\t(property "Footprint" "" (at 0 0 0)(effects (font (size 1.27 1.27))(hide yes)))',
+             f'\t\t\t(symbol "{ref}_0_1"',
+             f'\t\t\t\t(rectangle (start 0 {PITCH:.2f})(end {BODY_W:.2f} {-(n*PITCH):.2f})(stroke (width 0.1524)(type default))(fill (type background)))',
+             '\t\t\t)',
+             f'\t\t\t(symbol "{ref}_1_1"']
+    for i, (pinno, (pinname, _net)) in enumerate(pins):
+        py = -i * PITCH
+        lines.append(f'\t\t\t\t(pin passive line (at 0 {py:.2f} 0)(length 2.54)'
+                     f'(name "{pinname}" (effects (font (size 1.0 1.0))))'
+                     f'(number "{pinno}" (effects (font (size 0.8 0.8)))))')
+    lines += ['\t\t\t)', '\t\t)']
+    return "\n".join(lines)
 
-# ── Schematic wire/label helpers ──────────────────────────────────────────────
+def instance(ref, value, footprint, pins, ox, oy):
+    out = [f'\t(symbol (lib_id "ual:{ref}")(at {ox:.2f} {oy:.2f} 0)(unit 1)'
+           '(exclude_from_sim no)(in_bom yes)(on_board yes)(dnp no)',
+           f'\t\t(uuid "{u()}")',
+           f'\t\t(property "Reference" "{ref}" (at {ox+BODY_W/2:.2f} {oy+PITCH*1.5:.2f} 0)(effects (font (size 1.27 1.27))))',
+           f'\t\t(property "Value" "{value}" (at {ox+BODY_W/2:.2f} {oy-(len(pins)*PITCH):.2f} 0)(effects (font (size 1.0 1.0))))',
+           f'\t\t(property "Footprint" "{footprint}" (at {ox:.2f} {oy:.2f} 0)(effects (font (size 1.27 1.27))(hide yes)))']
+    for pinno, _ in pins:
+        out.append(f'\t\t(pin "{pinno}" (uuid "{u()}"))')
+    out.append(f'\t\t(instances (project "urine_analyzer_lite" (path "/{ROOT}" (reference "{ref}")(unit 1))))')
+    out.append('\t)')
+    return "\n".join(out)
 
-def wire(x1, y1, x2, y2):
-    return f"""  (wire (pts (xy {x1} {y1}) (xy {x2} {y2}))
-    (stroke (width 0) (type default))
-    (uuid "{uid()}"))"""
+def labels(pins, ox, oy):
+    out = []
+    for i, (_pinno, (_pinname, net)) in enumerate(pins):
+        ay = oy - (-i * PITCH)   # oy - py, py = -i*PITCH  => oy + i*PITCH
+        out.append(f'\t(global_label "{net}" (shape input)(at {ox:.2f} {ay:.2f} 180)'
+                   f'(effects (font (size 1.27 1.27))(justify right))(uuid "{u()}"))')
+    return "\n".join(out)
 
-def pwr_symbol(name, x, y, rot=0):
-    return f"""  (power "{name}" (at {x} {y} {rot})
-    (fields_autoplaced yes)
-    (uuid "{uid()}")
-    (property "Reference" "#PWR" (at {x} {y-2} 0) (effects (font (size 1 1)) hide))
-    (property "Value" "{name}" (at {x} {y-3.5} 0) (effects (font (size 1 1))))
-    (property "Footprint" "" (at {x} {y} 0) (effects (font (size 1 1)) hide))
-    (pin "1" (uuid "{uid()}"))
-  )"""
+def main():
+    comps = g.COMPONENTS
+    header = ['(kicad_sch', '\t(version 20250114)', '\t(generator "gen_sch.py")',
+              '\t(generator_version "9.0")', f'\t(uuid "{ROOT}")', '\t(paper "A1")',
+              '\t(lib_symbols']
+    defs = [sym_def(ref, val, list(pins.items())) for ref, val, _fp, _d, pins in comps]
+    body = ['\t)']
+    ox, oy = COL_X0, ROW_Y0
+    for ref, val, fp, _d, pins in comps:
+        pl = list(pins.items())
+        h = len(pl) * PITCH + MARGIN
+        if oy + h > COL_H:
+            ox += COL_STEP; oy = ROW_Y0
+        body.append(instance(ref, val, fp, pl, ox, oy))
+        body.append(labels(pl, ox, oy))
+        oy += h
+    footer = ['\t(sheet_instances', '\t\t(path "/" (page "1"))', '\t)', ')']
+    txt = "\n".join(header + defs + body + footer) + "\n"
+    here = os.path.dirname(os.path.abspath(__file__))
+    open(os.path.join(here, "urine_analyzer_lite.kicad_sch"), "w").write(txt)
+    print("wrote schematic")
 
-def label(name, x, y, rot=0):
-    return f"""  (global_label "{name}" (shape input) (at {x} {y} {rot})
-    (effects (font (size 1.27 1.27)))
-    (uuid "{uid()}")
-    (property "Intersheet References" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-  )"""
-
-def net_label(name, x, y, rot=0):
-    return f"""  (net_tie_pad_groups "")
-  (label "{name}" (at {x} {y} {rot})
-    (effects (font (size 1.27 1.27)))
-    (uuid "{uid()}"))"""
-
-# ── Component block builder ───────────────────────────────────────────────────
-
-def box_component(ref, val, x, y, width, height, pins_left, pins_right,
-                  pins_top=None, pins_bottom=None, color=""):
-    """Draws a rectangular component with labeled pins."""
-    lines = []
-    lines.append(f'  ; ── {ref} : {val} ──')
-
-    # Border rectangle via 4 wires
-    x2, y2 = x + width, y + height
-    for sx, sy, ex, ey in [(x, y, x2, y), (x2, y, x2, y2),
-                            (x2, y2, x, y2), (x, y2, x, y)]:
-        lines.append(f'  (wire (pts (xy {sx} {sy}) (xy {ex} {ey}))'
-                     f' (stroke (width 0.25) (type default)) (uuid "{uid()}"))')
-
-    # Reference label
-    lines.append(f'  (text "{ref}" (at {x + 0.5} {y + 0.8} 0)'
-                 f' (effects (font (size 1 1) bold)) (uuid "{uid()}"))')
-    lines.append(f'  (text "{val}" (at {x + 0.5} {y + 2} 0)'
-                 f' (effects (font (size 0.9 0.9))) (uuid "{uid()}"))')
-
-    pin_step = 2.54
-    # Left pins
-    for i, (pin_name, net) in enumerate(pins_left):
-        py = y + 4 + i * pin_step
-        lines.append(f'  (text "{pin_name}" (at {x + 0.5} {py} 0)'
-                     f' (effects (font (size 0.9 0.9)) (justify left)) (uuid "{uid()}"))')
-        lines.append(wire(x - 5, py, x, py))
-        lines.append(f'  (label "{net}" (at {x - 5} {py} 180)'
-                     f' (effects (font (size 1 1))) (uuid "{uid()}"))')
-
-    # Right pins
-    for i, (pin_name, net) in enumerate(pins_right):
-        py = y + 4 + i * pin_step
-        lines.append(f'  (text "{pin_name}" (at {x2 - 0.5} {py} 0)'
-                     f' (effects (font (size 0.9 0.9)) (justify right)) (uuid "{uid()}"))')
-        lines.append(wire(x2, py, x2 + 5, py))
-        lines.append(f'  (label "{net}" (at {x2 + 5} {py} 0)'
-                     f' (effects (font (size 1 1))) (uuid "{uid()}"))')
-
-    return '\n'.join(lines)
-
-
-# ── Main schematic builder ────────────────────────────────────────────────────
-
-def build_schematic():
-    parts = []
-
-    # ── ESP32-S3 DevKitC-1 ─────────────────────────── col 0 row 0 ──
-    parts.append(box_component(
-        'U1', 'ESP32-S3-DevKitC-1',
-        x=10, y=10, width=30, height=70,
-        pins_left=[
-            ('3V3',    '3V3'),
-            ('GND',    'GND'),
-            ('GPIO21',  'I2C_SDA'),
-            ('GPIO22',  'I2C_SCL'),
-            ('GPIO1',   'ADC_ALERT'),
-            ('GPIO4',   'HX711_DT'),
-            ('GPIO5',   'HX711_SCK'),
-            ('GPIO16',  'UART1_TX'),
-            ('GPIO17',  'UART1_RX'),
-            ('GPIO18',  'MOTOR_IN1'),
-            ('GPIO8',   'MOTOR_IN2'),
-            ('GPIO15',  'ENC_A'),
-            ('GPIO7',   'ENC_B'),
-        ],
-        pins_right=[
-            ('GPIO2',   'LED_PWM'),
-            ('GPIO3',   'UVC_EN'),
-            ('GPIO9',   'SCAN_BTN'),
-            ('GPIO10',  'LIMIT_HOME'),
-            ('GPIO11',  'LIMIT_END'),
-            ('GPIO12',  'DSI_CLK'),
-            ('GPIO13',  'DSI_D0P'),
-            ('GPIO14',  'DSI_D0N'),
-            ('GPIO6',   'PRINTER_TX'),
-            ('GPIO19',  'PRINTER_RX'),
-            ('5V',      '5V'),
-            ('GND',     'GND'),
-        ],
-    ))
-
-    # ── Power: TP4056 USB-C charger ─────────────────── col 1 row 0 ──
-    parts.append(box_component(
-        'U2', 'TP4056 USB-C Charger',
-        x=60, y=10, width=22, height=26,
-        pins_left=[
-            ('USB_IN+', 'VUSB'),
-            ('USB_IN-', 'GND'),
-        ],
-        pins_right=[
-            ('B+',  'LIPO_P'),
-            ('B-',  'GND'),
-            ('OUT+','VREG_IN'),
-            ('OUT-','GND'),
-        ],
-    ))
-
-    # ── Power: LiPo 3.7V 2000mAh ────────────────────── col 1 row 1 ──
-    parts.append(box_component(
-        'BT1', '3.7V 2000mAh LiPo',
-        x=60, y=50, width=22, height=14,
-        pins_left=[
-            ('B+', 'LIPO_P'),
-            ('B-', 'GND'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── Power: S13V25F5 Buck-Boost ───────────────────── col 1 row 2 ──
-    parts.append(box_component(
-        'U3', 'S13V25F5 5V Reg',
-        x=60, y=78, width=22, height=18,
-        pins_left=[
-            ('VIN', 'VREG_IN'),
-            ('GND', 'GND'),
-            ('EN',  '3V3'),
-        ],
-        pins_right=[
-            ('VOUT', '5V'),
-            ('GND',  'GND'),
-        ],
-    ))
-
-    # ── I2C Bus: TCS34725 RGB Sensor #1 ─────────────── col 2 row 0 ──
-    parts.append(box_component(
-        'U4', 'TCS34725 RGB #1',
-        x=110, y=10, width=22, height=18,
-        pins_left=[
-            ('VCC',  '3V3'),
-            ('GND',  'GND'),
-            ('SCL',  'I2C_SCL'),
-            ('SDA',  'I2C_SDA'),
-        ],
-        pins_right=[
-            ('INT', 'ADC_ALERT'),
-        ],
-    ))
-
-    # ── I2C Bus: TCS34725 RGB Sensor #2 ─────────────── col 2 row 1 ──
-    parts.append(box_component(
-        'U5', 'TCS34725 RGB #2',
-        x=110, y=40, width=22, height=18,
-        pins_left=[
-            ('VCC',  '3V3'),
-            ('GND',  'GND'),
-            ('SCL',  'I2C_SCL'),
-            ('SDA',  'I2C_SDA'),
-            ('LED',  'LED_PWM'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── I2C Bus: SHT31 Temp/Humidity ────────────────── col 2 row 2 ──
-    parts.append(box_component(
-        'U6', 'SHT31-D Env Sensor',
-        x=110, y=70, width=22, height=18,
-        pins_left=[
-            ('VIN', '3V3'),
-            ('GND', 'GND'),
-            ('SCL', 'I2C_SCL'),
-            ('SDA', 'I2C_SDA'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── I2C Bus: BH1750 Ambient Light ───────────────── col 2 row 3 ──
-    parts.append(box_component(
-        'U7', 'BH1750 Light Sensor',
-        x=110, y=100, width=22, height=18,
-        pins_left=[
-            ('VCC',  '3V3'),
-            ('GND',  'GND'),
-            ('SCL',  'I2C_SCL'),
-            ('SDA',  'I2C_SDA'),
-            ('ADDR', 'GND'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── I2C Bus: ADS1115 16-bit ADC ─────────────────── col 2 row 4 ──
-    parts.append(box_component(
-        'U8', 'ADS1115 ADC',
-        x=110, y=130, width=22, height=18,
-        pins_left=[
-            ('VDD',  '3V3'),
-            ('GND',  'GND'),
-            ('SCL',  'I2C_SCL'),
-            ('SDA',  'I2C_SDA'),
-            ('ADDR', 'GND'),
-        ],
-        pins_right=[
-            ('ALRT', 'ADC_ALERT'),
-            ('AIN0', 'NTC_SIGNAL'),
-        ],
-    ))
-
-    # ── NTC Thermistor ──────────────────────────────── col 3 row 4 ──
-    parts.append(box_component(
-        'RT1', 'NTC Thermistor 10k',
-        x=160, y=130, width=18, height=10,
-        pins_left=[
-            ('T1', 'NTC_SIGNAL'),
-            ('T2', 'GND'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── Motor: N20 + MX1508 H-Bridge ────────────────── col 3 row 0 ──
-    parts.append(box_component(
-        'U9', 'MX1508 H-Bridge',
-        x=160, y=10, width=22, height=22,
-        pins_left=[
-            ('VCC',  '5V'),
-            ('GND',  'GND'),
-            ('IN1',  'MOTOR_IN1'),
-            ('IN2',  'MOTOR_IN2'),
-        ],
-        pins_right=[
-            ('OUT1', 'MOTOR_A'),
-            ('OUT2', 'MOTOR_B'),
-        ],
-    ))
-    parts.append(box_component(
-        'M1', 'N20 DC Motor+Encoder',
-        x=200, y=10, width=22, height=22,
-        pins_left=[
-            ('M+',   'MOTOR_A'),
-            ('M-',   'MOTOR_B'),
-            ('VCC',  '3V3'),
-            ('GND',  'GND'),
-            ('ENC_A','ENC_A'),
-            ('ENC_B','ENC_B'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── Limit Switches ──────────────────────────────── col 3 row 1 ──
-    parts.append(box_component(
-        'SW1', 'KW12-3 Home Limit',
-        x=160, y=45, width=20, height=10,
-        pins_left=[
-            ('COM', 'GND'),
-            ('NO',  'LIMIT_HOME'),
-        ],
-        pins_right=[],
-    ))
-    parts.append(box_component(
-        'SW2', 'KW12-3 End Limit',
-        x=160, y=65, width=20, height=10,
-        pins_left=[
-            ('COM', 'GND'),
-            ('NO',  'LIMIT_END'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── High-CRI LED + MOSFET ───────────────────────── col 3 row 2 ──
-    parts.append(box_component(
-        'Q1', '2N7000 N-Ch MOSFET',
-        x=160, y=85, width=20, height=14,
-        pins_left=[
-            ('G', 'LED_PWM'),
-            ('S', 'GND'),
-        ],
-        pins_right=[
-            ('D', 'LED_K'),
-        ],
-    ))
-    parts.append(box_component(
-        'D1', 'High-CRI LED 95+ CRI',
-        x=190, y=85, width=18, height=10,
-        pins_left=[
-            ('A', '3V3'),
-            ('K', 'LED_K'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── UV-C LED ────────────────────────────────────── col 3 row 3 ──
-    parts.append(box_component(
-        'D2', '275nm UVC LED',
-        x=160, y=110, width=18, height=10,
-        pins_left=[
-            ('EN',  'UVC_EN'),
-            ('GND', 'GND'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── HX711 Load Cell ─────────────────────────────── col 4 row 0 ──
-    parts.append(box_component(
-        'U10', 'HX711 Load Cell Amp',
-        x=240, y=10, width=22, height=22,
-        pins_left=[
-            ('VCC', '3V3'),
-            ('GND', 'GND'),
-            ('DT',  'HX711_DT'),
-            ('SCK', 'HX711_SCK'),
-        ],
-        pins_right=[
-            ('E+', 'CELL_EP'),
-            ('E-', 'CELL_EN'),
-            ('A+', 'CELL_AP'),
-            ('A-', 'CELL_AN'),
-        ],
-    ))
-    parts.append(box_component(
-        'FS1', 'Load Cell 1kg',
-        x=275, y=10, width=18, height=18,
-        pins_left=[
-            ('E+', 'CELL_EP'),
-            ('E-', 'CELL_EN'),
-            ('A+', 'CELL_AP'),
-            ('A-', 'CELL_AN'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── Thermal Printer CSN-A2 ──────────────────────── col 4 row 1 ──
-    parts.append(box_component(
-        'PR1', 'CSN-A2 Thermal Printer',
-        x=240, y=45, width=22, height=18,
-        pins_left=[
-            ('VH',  '5V'),
-            ('GND', 'GND'),
-            ('TX',  'PRINTER_RX'),
-            ('RX',  'PRINTER_TX'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── Scan Button ─────────────────────────────────── col 4 row 2 ──
-    parts.append(box_component(
-        'SW3', 'Scan Button 6x6mm',
-        x=240, y=75, width=18, height=10,
-        pins_left=[
-            ('P1', '3V3'),
-            ('P2', 'SCAN_BTN'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── 4.3" DSI LCD ────────────────────────────────── col 4 row 3 ──
-    parts.append(box_component(
-        'LCD1', 'Waveshare 4.3in DSI LCD',
-        x=240, y=100, width=24, height=18,
-        pins_left=[
-            ('VCC',   '3V3'),
-            ('GND',   'GND'),
-            ('DCLK',  'DSI_CLK'),
-            ('D0+',   'DSI_D0P'),
-            ('D0-',   'DSI_D0N'),
-        ],
-        pins_right=[],
-    ))
-
-    # ── Assemble ─────────────────────────────────────────────────────
-    header = f"""(kicad_sch (version 20230121) (generator "urine_analyzer_lite_gen")
-
-  (uuid "{uid()}")
-
-  (paper "A1")
-
-  (title_block
-    (title "Urine Analyzer Lite — Schematic")
-    (date "{datetime.date.today()}")
-    (rev "1.0")
-    (company "Levram Lifesciences")
-  )
-
-"""
-    footer = "\n)\n"
-    body = '\n\n'.join(parts)
-    return header + body + footer
-
-
-# ── Entry point ───────────────────────────────────────────────────────────────
-if __name__ == '__main__':
-    import os
-    out = os.path.join(os.path.dirname(__file__), 'urine_analyzer_lite.kicad_sch')
-    content = build_schematic()
-    with open(out, 'w') as f:
-        f.write(content)
-    print(f"Written: {out}  ({len(content):,} bytes)")
+if __name__ == "__main__":
+    main()
